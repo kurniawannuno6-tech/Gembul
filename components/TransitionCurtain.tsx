@@ -30,14 +30,13 @@ export default function TransitionCurtain() {
     <div
       ref={curtainRef}
       className="fixed inset-0 z-[9980] flex items-center justify-center pointer-events-none"
-      style={{ display: "none", backgroundColor: "#0f0d09" }}
+      style={{ display: "none", backgroundColor: "#eb5c27" }}
     >
-      <p
-        className="text-2xl font-light tracking-[0.35em] uppercase"
-        style={{ fontFamily: "var(--font-display)", color: "#b8965a", opacity: 0.7 }}
-      >
-        Roti Gembul
-      </p>
+      <img
+        src="/images/LogoGembulPutih.png"
+        alt="Roti Gembul Logo"
+        className="w-24 md:w-32 h-auto object-contain opacity-85 select-none pointer-events-none"
+      />
     </div>
   );
 }
