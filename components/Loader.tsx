@@ -9,6 +9,8 @@ export default function Loader({ onComplete }: { onComplete: () => void }) {
   const countRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
+    if (!loaderRef.current || !logoRef.current || !lineRef.current || !countRef.current) return;
+
     // Kill any lingering tweens
     gsap.killTweensOf([loaderRef.current, logoRef.current, lineRef.current, countRef.current]);
 

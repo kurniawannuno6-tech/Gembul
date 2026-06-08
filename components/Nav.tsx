@@ -4,12 +4,14 @@ import gsap from "gsap";
 import Link from "next/link";
 
 const navLinks = [
-  { label: "Menus", href: "/menu" },
+  { label: "Menu", href: "/menu" },
   { label: "About", href: "/about" },
-  { label: "Accolades", href: "/accolades" },
+  { label: "Gallery", href: "/gallery" },
 ];
 const navLinksRight = [
-  { label: "Gallery", href: "/gallery" },
+  { label: "Outlet", href: "/outlet" },
+  { label: "Partnership", href: "/partnership" },
+  { label: "Career", href: "/career" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -71,10 +73,13 @@ export default function Nav({ visible }: { visible: boolean }) {
         {/* Center logo */}
         <Link
           href="/"
-          className="text-2xl font-semibold tracking-[0.25em] uppercase transition-opacity duration-300 hover:opacity-70 mx-12"
-          style={{ fontFamily: "var(--font-display)", color: "var(--color-gold)" }}
+          className="transition-opacity duration-300 hover:opacity-70 mx-12 flex items-center justify-center"
         >
-          Roti Gembul
+          <img
+            src="/images/LogoGembulPutih.png"
+            alt="Roti Gembul Logo"
+            className="h-10 md:h-12 w-auto object-contain select-none pointer-events-none"
+          />
         </Link>
 
         {/* Right links */}

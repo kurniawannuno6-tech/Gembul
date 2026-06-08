@@ -8,11 +8,12 @@ import Link from "next/link";
 gsap.registerPlugin(ScrollTrigger);
 
 const navLinks = [
-  { label: "Menus", href: "/menu" },
+  { label: "Menu", href: "/menu" },
   { label: "About", href: "/about" },
-  { label: "Accolades", href: "/accolades" },
   { label: "Gallery", href: "/gallery" },
-  { label: "Reservations", href: "/contact#reservations" },
+  { label: "Outlet", href: "/outlet" },
+  { label: "Partnership", href: "/partnership" },
+  { label: "Career", href: "/career" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -36,12 +37,16 @@ export default function Footer() {
       <div className="grid md:grid-cols-4 gap-14 mb-16">
         {/* Brand */}
         <div className="md:col-span-1">
-          <span
-            className="block text-2xl font-light tracking-[0.2em] uppercase mb-5"
-            style={{ fontFamily: "var(--font-display)", color: "var(--color-gold)" }}
+          <Link
+            href="/"
+            className="block mb-5 transition-opacity duration-300 hover:opacity-80"
           >
-            Roti Gembul
-          </span>
+            <img
+              src="/images/LogoGembulPutih.png"
+              alt="Roti Gembul Logo"
+              className="h-10 w-auto object-contain select-none pointer-events-none"
+            />
+          </Link>
           <p className="text-[0.73rem] leading-[1.95] max-w-[220px]" style={{ color: "var(--color-cream)", opacity: 0.45 }}>
             An epicurean blend of magnetic charisma, old world charm and relaxed
             elegance in the heart of Valletta.
