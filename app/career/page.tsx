@@ -72,8 +72,8 @@ export default function CareerPage() {
     }});
   };
 
-  const inputClass = "w-full bg-transparent border-b py-3 text-[0.8rem] outline-none transition-colors duration-300 focus:border-[#b8965a]";
-  const inputStyle = { borderColor: "rgba(184,150,90,0.3)", color: "var(--color-cream)" };
+  const inputClass = "w-full bg-white/5 border rounded-lg px-4 py-3.5 text-[0.82rem] outline-none transition-all duration-300 focus:border-[#b8965a] focus:bg-white/10 focus:ring-1 focus:ring-[#b8965a]/30";
+  const inputStyle = { borderColor: "rgba(184,150,90,0.25)", color: "var(--color-cream)" };
 
   return (
     <PageLayout>
@@ -170,7 +170,7 @@ export default function CareerPage() {
                 {/* Styled CV Upload Field */}
                 <div data-reveal className="flex flex-col justify-end">
                   <label className="block text-[0.58rem] tracking-[0.3em] uppercase mb-2" style={{ color: "var(--color-gold)" }}>Upload CV / Resume</label>
-                  <div className="relative border border-dashed rounded-lg p-3 flex items-center justify-center cursor-pointer transition-all duration-300 hover:bg-white/5" style={{ borderColor: "rgba(184,150,90,0.3)" }}>
+                  <div className="relative border border-dashed rounded-lg px-4 py-3.5 flex items-center justify-center cursor-pointer transition-all duration-300 hover:bg-white/5" style={{ borderColor: "rgba(184,150,90,0.3)" }}>
                     <input required type="file" accept=".pdf,.doc,.docx" onChange={handleFileChange}
                       className="absolute inset-0 w-full h-full opacity-0 cursor-pointer" />
                     <span className="text-[0.72rem] opacity-70 truncate max-w-[200px]">

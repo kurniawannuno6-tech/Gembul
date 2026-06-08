@@ -37,7 +37,7 @@ export default function Nav({ visible }: { visible: boolean }) {
   }, []);
 
   const linkClass =
-    "text-[0.75rem] tracking-[0.2em] uppercase transition-all duration-300 relative group"
+    "text-[0.75rem] font-bold tracking-[0.2em] uppercase transition-all duration-300 relative group"
   ;
 
   return (
@@ -99,7 +99,7 @@ export default function Nav({ visible }: { visible: boolean }) {
           </ul>
           <Link
             href="/contact#reservations"
-            className="text-[0.75rem] tracking-[0.2em] uppercase px-6 py-3 border transition-all duration-300 hover:text-[#1a1610] hover:bg-[#b8965a]"
+            className="text-[0.75rem] font-bold tracking-[0.2em] uppercase px-6 py-3 border transition-all duration-300 hover:text-[#1a1610] hover:bg-[#b8965a]"
             style={{
               borderColor: "var(--color-gold)",
               color: "var(--color-gold)",
@@ -151,7 +151,7 @@ export default function Nav({ visible }: { visible: boolean }) {
         <Link
           href="/contact#reservations"
           onClick={() => setMenuOpen(false)}
-          className="mt-4 text-sm tracking-[0.25em] uppercase px-10 py-4 border"
+          className="mt-4 text-sm font-bold tracking-[0.25em] uppercase px-10 py-4 border"
           style={{ borderColor: "var(--color-gold)", color: "var(--color-gold)" }}
         >
           Reserve a Table

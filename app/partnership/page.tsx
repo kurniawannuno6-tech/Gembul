@@ -85,8 +85,8 @@ export default function PartnershipPage() {
     }});
   };
 
-  const inputClass = "w-full bg-transparent border-b py-3 text-[0.8rem] outline-none transition-colors duration-300 focus:border-[#b8965a]";
-  const inputStyle = { borderColor: "rgba(184,150,90,0.3)", color: "var(--color-cream)" };
+  const inputClass = "w-full bg-white/5 border rounded-lg px-4 py-3.5 text-[0.82rem] outline-none transition-all duration-300 focus:border-[#b8965a] focus:bg-white/10 focus:ring-1 focus:ring-[#b8965a]/30";
+  const inputStyle = { borderColor: "rgba(184,150,90,0.25)", color: "var(--color-cream)" };
 
   return (
     <PageLayout>
