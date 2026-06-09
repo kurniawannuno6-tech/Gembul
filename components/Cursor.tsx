@@ -1,12 +1,21 @@
 "use client";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 
 export default function Cursor() {
   const dotRef = useRef<HTMLDivElement>(null);
   const ringRef = useRef<HTMLDivElement>(null);
+  const [enabled, setEnabled] = useState(false);
 
   useEffect(() => {
+    // Only enable custom cursor on devices that support hover and fine pointers (desktops)
+    const mql = window.matchMedia("(hover: hover) and (pointer: fine)");
+    setEnabled(mql.matches);
+  }, []);
+
+  useEffect(() => {
+    if (!enabled) return;
+
     const dot = dotRef.current!;
     const ring = ringRef.current!;
 
@@ -27,7 +36,9 @@ export default function Cursor() {
     return () => {
       window.removeEventListener("mousemove", onMove);
     };
-  }, []);
+  }, [enabled]);
+
+  if (!enabled) return null;
 
   return (
     <>

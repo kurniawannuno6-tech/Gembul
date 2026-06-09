@@ -42,20 +42,22 @@ body {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
   overflow-x: hidden;
-  cursor: none;
-  /* Keep custom cursor on interactive elements */
+}
 
-  a,
-  button,
-  input,
-  textarea,
-  select,
-  label,
-  [role="button"] {
-    cursor: none !important;
+/* Hide native cursor only on devices with hover and fine pointing (desktop) */
+@media (hover: hover) and (pointer: fine) {
+  body {
+    cursor: none;
   }
-
-  * {
+  
+  body a,
+  body button,
+  body input,
+  body textarea,
+  body select,
+  body label,
+  body [role="button"],
+  body * {
     cursor: none !important;
   }
 }
