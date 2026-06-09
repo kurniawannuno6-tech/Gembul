@@ -17,6 +17,27 @@ const navLinks = [
   { label: "Contact", href: "/contact" },
 ];
 
+const merchants = [
+  {
+    name: "GoFood",
+    color: "#EE2737",
+    href: "https://gofood.link/",
+    image: "/images/GoFood Logo.png"
+  },
+  {
+    name: "GrabFood",
+    color: "#00B14F",
+    href: "https://food.grab.com/",
+    image: "/images/GrabFood Logo.png"
+  },
+  {
+    name: "ShopeeFood",
+    color: "#EE4D2D",
+    href: "https://shopee.co.id/m/shopeefood",
+    image: "/images/ShoopeFood Logo.png"
+  }
+];
+
 export default function Footer() {
   const footerRef = useRef<HTMLElement>(null);
 
@@ -103,11 +124,35 @@ export default function Footer() {
           <h5 className="text-[0.58rem] tracking-[0.3em] uppercase mb-5" style={{ color: "var(--color-gold)" }}>
             Operational Outlet
           </h5>
-          <p className="text-[0.73rem] leading-[2.1] font-bold" style={{ color: "var(--color-cream)", opacity: 0.85 }}>
+          <p className="text-[0.73rem] leading-[2.1] font-bold mb-6" style={{ color: "var(--color-cream)", opacity: 0.85 }}>
             Sunday - Monday<br />
             10.00 - 22.00
           </p>
+          <div>
+            <h6 className="text-[0.52rem] tracking-[0.2em] uppercase font-bold mb-3.5" style={{ color: "var(--color-gold)", opacity: 0.9 }}>
+              Delivery Partners
+            </h6>
+            <div className="flex flex-wrap gap-4 items-center">
+              {merchants.map((m) => (
+                <a
+                  key={m.name}
+                  href={m.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition-transform duration-300 hover:-translate-y-0.5"
+                  style={{ cursor: "pointer" }}
+                >
+                  <img
+                    src={m.image}
+                    alt={m.name}
+                    className="h-10 w-auto object-contain transition-all duration-300 grayscale brightness-150 hover:grayscale-0 hover:brightness-100"
+                  />
+                </a>
+              ))}
+            </div>
+          </div>
         </div>
+
       </div>
 
       {/* Bottom */}
