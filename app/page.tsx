@@ -37,11 +37,18 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
+    const mql = window.matchMedia("(hover: hover) and (pointer: fine)");
+    if (!mql.matches) return;
+
     const lenis = new Lenis({ lerp: 0.08, smoothWheel: true });
     lenis.on("scroll", ScrollTrigger.update);
-    gsap.ticker.add((time) => lenis.raf(time * 1000));
+    const tickHandler = (time: number) => lenis.raf(time * 1000);
+    gsap.ticker.add(tickHandler);
     gsap.ticker.lagSmoothing(0);
-    return () => { lenis.destroy(); };
+    return () => {
+      lenis.destroy();
+      gsap.ticker.remove(tickHandler);
+    };
   }, []);
 
   // Stable callback so the Loader's useEffect doesn't re-fire on re-renders

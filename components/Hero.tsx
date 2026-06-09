@@ -34,6 +34,9 @@ export default function Hero({ loaded }: { loaded: boolean }) {
 
   // Subtle parallax on scroll
   useEffect(() => {
+    const mql = window.matchMedia("(hover: hover) and (pointer: fine)");
+    if (!mql.matches) return;
+
     const onScroll = () => gsap.set(bgRef.current, { y: window.scrollY * 0.35 });
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);

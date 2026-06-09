@@ -13,9 +13,9 @@ const menus = {
       { name: "Gembul Durian", price: "Rp 17k", desc: "Fresh strawberry jam with smooth cream cheese filling inside our signature soft bread.", image: "/images/menu-durian.jpg" },
       { name: "Gembul Nanas", price: "Rp 18k", desc: "Sweet tropical mango custard, light whipped cream, topped with powdered sugar.", image: "/images/menu-nanas.jpg" },
       { name: "Gembul Strawberry", price: "Rp 18k", desc: "Rich, authentic durian paste filling wrapped in our pillows of freshly baked gembul bread.", image: "/images/menu-strawberry.jpg" },
-      { name: "Gembul Durian Montong", price: "Rp 24k", desc: "Luscious blueberry compote balanced with rich vanilla pastry cream.", image: "/images/menu-durianmontong.jpg" },
+      { name: "Gembul Durian Montong", price: "Rp 24k", desc: "Luscious blueberry compote balanced with rich vanilla pastry cream.", image: "/images/menu-durian.jpg" },
       { name: "Gembul Srikaya", price: "Rp 18k", desc: "Caramelized pineapple chunks with a sweet coconut cream glaze.", image: "/images/menu-srikaya.jpg" },
-      { name: "Gembul Blueberry", price: "Rp 18k", desc: "Tart lemon curd filling topped with toasted sweet meringue swirls.", image: "/images/menu-blueberry.jpg" },
+      { name: "Gembul Blueberry", price: "Rp 18k", desc: "Tart lemon curd filling topped with toasted sweet meringue swirls.", image: "/images/menu-blueberry.png" },
       { name: "Gembul Pisang Cokelat", price: "Rp 18k", desc: "Juicy peach slices and raspberry coulis filling inside our pillow-soft bun.", image: "/images/menu-pisangcokelat.jpg" },
       { name: "Gembul Srikaya Pandan", price: "Rp 18k", desc: "Spiced apple compote filling with a light cinnamon oat crumble.", image: "/images/menu-srikayapandan.jpg" },
     ],
@@ -68,7 +68,7 @@ const menus = {
   drinks: {
     label: "Drinks",
     items: [
-      { name: "Es Ijab Kabul", price: "Rp 8k", desc: "Our house special brew! A perfectly balanced blend of premium espresso, fresh milk, and signature brown sugar syrup, topped with rich cold foam.", image: "/images/menu-drinks.png" },
+      { name: "Es Ijab Kabul", price: "Rp 8k", desc: "Our house special brew! A perfectly balanced blend of premium espresso, fresh milk, and signature brown sugar syrup, topped with rich cold foam.", image: "/images/menu-ijabkabul.png" },
     ],
   },
 };

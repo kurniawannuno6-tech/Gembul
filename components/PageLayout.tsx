@@ -20,11 +20,18 @@ export default function PageLayout({ children }: { children: React.ReactNode }) 
       { opacity: 1, y: 0, duration: 0.7, ease: "power3.out", delay: 0.55 }
     );
 
+    const mql = window.matchMedia("(hover: hover) and (pointer: fine)");
+    if (!mql.matches) return;
+
     const lenis = new Lenis({ lerp: 0.08, smoothWheel: true });
     lenis.on("scroll", ScrollTrigger.update);
-    gsap.ticker.add((time) => lenis.raf(time * 1000));
+    const tickHandler = (time: number) => lenis.raf(time * 1000);
+    gsap.ticker.add(tickHandler);
     gsap.ticker.lagSmoothing(0);
-    return () => { lenis.destroy(); };
+    return () => {
+      lenis.destroy();
+      gsap.ticker.remove(tickHandler);
+    };
   }, []);
 
   return (
