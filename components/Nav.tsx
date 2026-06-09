@@ -97,16 +97,6 @@ export default function Nav({ visible }: { visible: boolean }) {
               </li>
             ))}
           </ul>
-          <Link
-            href="/contact#reservations"
-            className="text-[0.75rem] font-bold tracking-[0.2em] uppercase px-6 py-3 border transition-all duration-300 hover:text-[#1a1610] hover:bg-[#b8965a]"
-            style={{
-              borderColor: "var(--color-gold)",
-              color: "var(--color-gold)",
-            }}
-          >
-            Reserve
-          </Link>
         </div>
 
         {/* Mobile hamburger */}
@@ -148,14 +138,6 @@ export default function Nav({ visible }: { visible: boolean }) {
             {l.label}
           </Link>
         ))}
-        <Link
-          href="/contact#reservations"
-          onClick={() => setMenuOpen(false)}
-          className="mt-4 text-sm font-bold tracking-[0.25em] uppercase px-10 py-4 border"
-          style={{ borderColor: "var(--color-gold)", color: "var(--color-gold)" }}
-        >
-          Reserve a Table
-        </Link>
       </div>
     </>
   );

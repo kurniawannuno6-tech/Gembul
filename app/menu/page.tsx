@@ -16,14 +16,14 @@ const menus = {
       { name: "Gembul Durian Montong", price: "Rp 24k", desc: "Luscious blueberry compote balanced with rich vanilla pastry cream.", image: "/images/menu-durian.jpg" },
       { name: "Gembul Srikaya", price: "Rp 18k", desc: "Caramelized pineapple chunks with a sweet coconut cream glaze.", image: "/images/menu-srikaya.jpg" },
       { name: "Gembul Blueberry", price: "Rp 18k", desc: "Tart lemon curd filling topped with toasted sweet meringue swirls.", image: "/images/menu-blueberry.png" },
-      { name: "Gembul Pisang Cokelat", price: "Rp 18k", desc: "Juicy peach slices and raspberry coulis filling inside our pillow-soft bun.", image: "/images/menu-pisangcokelat.jpg" },
+      { name: "Gembul Pisang Cokelat", price: "Rp 18k", desc: "Juicy peach slices and raspberry coulis filling inside our pillow-soft bun.", image: "/images/menu-pisangcokelat.png" },
       { name: "Gembul Srikaya Pandan", price: "Rp 18k", desc: "Spiced apple compote filling with a light cinnamon oat crumble.", image: "/images/menu-srikayapandan.jpg" },
     ],
   },
   sweet: {
     label: "Sweet Taste",
     items: [
-      { name: "Gembul Choqueen", price: "Rp 24k", desc: "Warm, flowing Belgian dark chocolate filling inside a perfectly baked cocoa-dusted bun.", image: "/images/menu-choqueen.jpg" },
+      { name: "Gembul Choqueen", price: "Rp 24k", desc: "Warm, flowing Belgian dark chocolate filling inside a perfectly baked cocoa-dusted bun.", image: "/images/menu-chocoqueen.jpg" },
       { name: "Gembul Messes Cokelat", price: "Rp 16k", desc: "Coffee-soaked soft bun with a rich mascarpone cream filling, dusted with cocoa powder.", image: "/images/menu-mesescokelat.jpg" },
       { name: "Gembul Vanilla", price: "Rp 20k", desc: "Premium Japanese Uji matcha cream filling with a delicate white chocolate drizzle.", image: "/images/menu-vanilla.jpg" },
       { name: "Gembul Messes Warna", price: "Rp 16k", desc: "Sweet and salty caramel glaze topped with crushed Lotus Biscoff cookies.", image: "/images/menu-meseswarna.jpg" },

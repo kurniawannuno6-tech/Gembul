@@ -63,16 +63,32 @@ export default function Footer() {
             elegance in Magelang.
           </p>
           <div className="flex gap-3 mt-7">
-            {["Fb", "Ig", "Ta"].map((s) => (
-              <a
-                key={s}
-                href="#"
-                className="w-9 h-9 border flex items-center justify-center text-[0.6rem] tracking-wide transition-all duration-300 hover:border-[var(--color-charcoal)] hover:text-[var(--color-charcoal)]"
-                style={{ borderColor: "rgba(99,40,22,0.25)", color: "var(--color-charcoal)" }}
-              >
-                {s}
-              </a>
-            ))}
+            <a
+              href="https://www.instagram.com/rotigembonggembul.id?igsh=MWluMzBlOXc5Y2hpbg%3D%3D&utm_source=qr"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-9 h-9 border rounded-full flex items-center justify-center transition-all duration-300 group hover:-translate-y-0.5 hover:border-[var(--color-charcoal)]"
+              style={{ borderColor: "rgba(99,40,22,0.25)", cursor: "pointer" }}
+            >
+              <img
+                src="/images/instagram-logo.png"
+                alt="Instagram"
+                className="h-4.5 w-4.5 object-contain transition-all duration-300 grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100"
+              />
+            </a>
+            <a
+              href="https://www.tiktok.com/@rotigembonggembul.id?_r=1&_t=ZS-973prLYndJa"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-9 h-9 border rounded-full flex items-center justify-center transition-all duration-300 group hover:-translate-y-0.5 hover:border-[var(--color-charcoal)]"
+              style={{ borderColor: "rgba(99,40,22,0.25)", cursor: "pointer" }}
+            >
+              <img
+                src="/images/tiktok-logo.png"
+                alt="TikTok"
+                className="h-4.5 w-4.5 object-contain transition-all duration-300 grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100"
+              />
+            </a>
           </div>
         </div>
 

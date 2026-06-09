@@ -134,10 +134,10 @@ export default function ContactPage() {
         {/* Info panel */}
         <div ref={infoRef} className="py-24 px-10 border-l" style={{ backgroundColor: "var(--color-charcoal)", borderColor: "rgba(184,150,90,0.15)" }}>
           {[
-            { title: "Location", lines: ["Roti Gembul", "St. Georges Square", "Valletta, VLT 1190", "Malta"] },
-            { title: "Opening Hours", lines: ["Lunch: Mon – Sun", "from 12:30 pm", "", "Dinner: Mon – Sun", "from 6:30 pm"] },
-            { title: "Contact", lines: ["info@rotigembul.com", "+356 79 264 613"] },
-            { title: "Dress Code", lines: ["Smart casual.", "We ask guests to refrain", "from sportswear and flip-flops."] },
+            { title: "Location", lines: ["Roti Gembul", "Jl. Soekarno Hatta, Drojogan 05/03", "Bumirejo, Mungkid, Magelang", "Jawa Tengah"] },
+            { title: "Opening Hours", lines: ["Sunday - Monday", "from 10:00 am to 10.00 pm"] },
+            { title: "Contact", lines: ["gembonggembul.id@gmail.com", "+356 79 264 613"] },
+            { title: "Dress Code", lines: ["Smart casual.", "We ask guests to refrain"] },
           ].map((block) => (
             <div key={block.title} data-item className="mb-12 pb-12 border-b last:border-0 last:mb-0 last:pb-0"
               style={{ borderColor: "rgba(184,150,90,0.12)" }}>

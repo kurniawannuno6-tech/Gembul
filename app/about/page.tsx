@@ -16,21 +16,15 @@ gsap.registerPlugin(ScrollTrigger);
 const team = [
   {
     name: "Chef Isabelle Moreau",
-    role: "Executive Chef",
+    role: "President",
     img: "/images/team-chef.jpg",         // 600 × 800 px portrait
     bio: "Trained in Paris and Tokyo, Isabelle brings 20 years of mastery to every plate — balancing classical technique with daring innovation.",
   },
   {
     name: "Marco Vella",
-    role: "Head Sommelier",
+    role: "Vice President",
     img: "/images/team-sommelier.jpg",     // 600 × 800 px portrait
     bio: "With a cellar spanning four continents, Marco curates pairings that elevate each dish into an unforgettable sensory narrative.",
-  },
-  {
-    name: "Sophia D'Angelo",
-    role: "Pastry Chef",
-    img: "/images/team-pastry.jpg",        // 600 × 800 px portrait
-    bio: "A disciple of precision and beauty, Sophia's desserts are edible sculptures — stories told in chocolate, caramel, and spun sugar.",
   },
 ];
 
