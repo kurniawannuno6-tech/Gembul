@@ -7,16 +7,6 @@ import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const navLinks = [
-  { label: "Menu", href: "/menu" },
-  { label: "About", href: "/about" },
-  { label: "Gallery", href: "/gallery" },
-  { label: "Outlet", href: "/outlet" },
-  { label: "Partnership", href: "/partnership" },
-  { label: "Career", href: "/career" },
-  { label: "Contact", href: "/contact" },
-];
-
 const merchants = [
   {
     name: "GoFood",
@@ -53,7 +43,7 @@ export default function Footer() {
       ref={footerRef}
       id="contact"
       className="px-10 md:px-20 pt-20 pb-10 border-t"
-      style={{ backgroundColor: "var(--color-ink)", borderColor: "rgba(184,150,90,0.18)" }}
+      style={{ backgroundColor: "var(--color-gold)", borderColor: "rgba(99,40,22,0.18)" }}
     >
       <div className="grid md:grid-cols-4 gap-14 mb-16">
         {/* Brand */}
@@ -68,7 +58,7 @@ export default function Footer() {
               className="h-10 w-auto object-contain select-none pointer-events-none"
             />
           </Link>
-          <p className="text-[0.73rem] leading-[1.95] max-w-[220px] font-bold" style={{ color: "var(--color-cream)", opacity: 0.85 }}>
+          <p className="text-[0.73rem] leading-[1.95] max-w-[220px] font-bold" style={{ color: "var(--color-charcoal)", opacity: 0.85 }}>
             An epicurean blend of magnetic charisma, old world charm and relaxed
             elegance in Magelang.
           </p>
@@ -77,8 +67,8 @@ export default function Footer() {
               <a
                 key={s}
                 href="#"
-                className="w-9 h-9 border flex items-center justify-center text-[0.6rem] tracking-wide transition-all duration-300 hover:border-[#b8965a] hover:text-[#b8965a]"
-                style={{ borderColor: "rgba(184,150,90,0.25)", color: "var(--color-warm-gray)" }}
+                className="w-9 h-9 border flex items-center justify-center text-[0.6rem] tracking-wide transition-all duration-300 hover:border-[var(--color-charcoal)] hover:text-[var(--color-charcoal)]"
+                style={{ borderColor: "rgba(99,40,22,0.25)", color: "var(--color-charcoal)" }}
               >
                 {s}
               </a>
@@ -86,32 +76,39 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Navigation */}
+        {/* Contact info */}
         <div>
-          <h5 className="text-[0.58rem] tracking-[0.3em] uppercase mb-5" style={{ color: "var(--color-gold)" }}>
-            Navigate
+          <h5 className="text-[0.58rem] tracking-[0.3em] uppercase mb-5" style={{ color: "var(--color-charcoal)" }}>
+            Contact Us
           </h5>
           <ul className="space-y-3">
-            {navLinks.map((l) => (
-              <li key={l.label}>
-                <Link
-                  href={l.href}
-                  className="text-[0.73rem] tracking-[0.04em] font-bold transition-opacity duration-300 hover:opacity-100"
-                  style={{ color: "var(--color-cream)", opacity: 0.85 }}
-                >
-                  {l.label}
-                </Link>
-              </li>
-            ))}
+            <li>
+              <a
+                href="mailto:gembonggembul.id@gmail.com"
+                className="text-[0.73rem] tracking-[0.04em] font-bold transition-opacity duration-300 hover:opacity-100 block"
+                style={{ color: "var(--color-charcoal)", opacity: 0.85, cursor: "pointer" }}
+              >
+                gembonggembul.id@gmail.com
+              </a>
+            </li>
+            <li>
+              <a
+                href="tel:+35679264613"
+                className="text-[0.73rem] tracking-[0.04em] font-bold transition-opacity duration-300 hover:opacity-100 block"
+                style={{ color: "var(--color-charcoal)", opacity: 0.85, cursor: "pointer" }}
+              >
+                +356 79 264 613
+              </a>
+            </li>
           </ul>
         </div>
 
         {/* Location */}
         <div>
-          <h5 className="text-[0.58rem] tracking-[0.3em] uppercase mb-5" style={{ color: "var(--color-gold)" }}>
+          <h5 className="text-[0.58rem] tracking-[0.3em] uppercase mb-5" style={{ color: "var(--color-charcoal)" }}>
             Location
           </h5>
-          <address className="not-italic text-[0.73rem] leading-[2.1] font-bold" style={{ color: "var(--color-cream)", opacity: 0.85 }}>
+          <address className="not-italic text-[0.73rem] leading-[2.1] font-bold" style={{ color: "var(--color-charcoal)", opacity: 0.85 }}>
             Roti Gembul<br />
             Jl. Soekarno Hatta, Drojogan 05/03<br />
             Bumirejo, Mungkid, Magelang<br />
@@ -121,15 +118,15 @@ export default function Footer() {
 
         {/* Hours */}
         <div>
-          <h5 className="text-[0.58rem] tracking-[0.3em] uppercase mb-5" style={{ color: "var(--color-gold)" }}>
+          <h5 className="text-[0.58rem] tracking-[0.3em] uppercase mb-5" style={{ color: "var(--color-charcoal)" }}>
             Operational Outlet
           </h5>
-          <p className="text-[0.73rem] leading-[2.1] font-bold mb-6" style={{ color: "var(--color-cream)", opacity: 0.85 }}>
+          <p className="text-[0.73rem] leading-[2.1] font-bold mb-6" style={{ color: "var(--color-charcoal)", opacity: 0.85 }}>
             Sunday - Monday<br />
             10.00 - 22.00
           </p>
           <div>
-            <h6 className="text-[0.52rem] tracking-[0.2em] uppercase font-bold mb-3.5" style={{ color: "var(--color-gold)", opacity: 0.9 }}>
+            <h6 className="text-[0.52rem] tracking-[0.2em] uppercase font-bold mb-3.5" style={{ color: "var(--color-charcoal)", opacity: 0.9 }}>
               Delivery Partners
             </h6>
             <div className="flex flex-wrap gap-4 items-center">
@@ -145,7 +142,7 @@ export default function Footer() {
                   <img
                     src={m.image}
                     alt={m.name}
-                    className="h-10 w-auto object-contain transition-all duration-300 grayscale brightness-150 hover:grayscale-0 hover:brightness-100"
+                    className="h-10 w-auto object-contain transition-all duration-300 grayscale opacity-80 hover:grayscale-0 hover:opacity-100"
                   />
                 </a>
               ))}
@@ -158,15 +155,15 @@ export default function Footer() {
       {/* Bottom */}
       <div
         className="flex flex-col md:flex-row justify-between items-center gap-4 pt-8 border-t"
-        style={{ borderColor: "rgba(184,150,90,0.15)" }}
+        style={{ borderColor: "rgba(99,40,22,0.15)" }}
       >
-        <p className="text-[0.63rem] tracking-[0.07em]" style={{ color: "var(--color-cream)", opacity: 0.3 }}>
+        <p className="text-[0.63rem] tracking-[0.07em]" style={{ color: "var(--color-charcoal)", opacity: 0.65 }}>
           © 2024 Roti Gembul. All rights reserved.
         </p>
         <a
           href="#"
           className="text-[0.63rem] tracking-[0.07em] transition-opacity duration-300 hover:opacity-80"
-          style={{ color: "var(--color-cream)", opacity: 0.3 }}
+          style={{ color: "var(--color-charcoal)", opacity: 0.65 }}
         >
           Privacy Policy
         </a>
