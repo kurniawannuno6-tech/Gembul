@@ -10,10 +10,9 @@ import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Quote from "@/components/Quote";
-import Menu from "@/components/Menu";
+import Promo from "@/components/Promo";
 import Accolades from "@/components/Accolades";
 import Gallery from "@/components/Gallery";
-import InfoStrip from "@/components/InfoStrip";
 import Footer from "@/components/Footer";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -57,10 +56,9 @@ export default function Home() {
         <Hero loaded={loaded} />
         <About />
         <Quote />
-        <Menu />
+        <Promo />
         <Accolades />
         <Gallery />
-        <InfoStrip />
         <Footer />
       </main>
     </>

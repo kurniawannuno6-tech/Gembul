@@ -47,9 +47,9 @@ export default function Footer() {
               className="h-10 w-auto object-contain select-none pointer-events-none"
             />
           </Link>
-          <p className="text-[0.73rem] leading-[1.95] max-w-[220px]" style={{ color: "var(--color-cream)", opacity: 0.45 }}>
+          <p className="text-[0.73rem] leading-[1.95] max-w-[220px] font-bold" style={{ color: "var(--color-cream)", opacity: 0.85 }}>
             An epicurean blend of magnetic charisma, old world charm and relaxed
-            elegance in the heart of Valletta.
+            elegance in Magelang.
           </p>
           <div className="flex gap-3 mt-7">
             {["Fb", "Ig", "Ta"].map((s) => (
@@ -75,8 +75,8 @@ export default function Footer() {
               <li key={l.label}>
                 <Link
                   href={l.href}
-                  className="text-[0.73rem] tracking-[0.04em] transition-opacity duration-300 hover:opacity-100"
-                  style={{ color: "var(--color-cream)", opacity: 0.45 }}
+                  className="text-[0.73rem] tracking-[0.04em] font-bold transition-opacity duration-300 hover:opacity-100"
+                  style={{ color: "var(--color-cream)", opacity: 0.85 }}
                 >
                   {l.label}
                 </Link>
@@ -90,24 +90,22 @@ export default function Footer() {
           <h5 className="text-[0.58rem] tracking-[0.3em] uppercase mb-5" style={{ color: "var(--color-gold)" }}>
             Location
           </h5>
-          <address className="not-italic text-[0.73rem] leading-[2.1]" style={{ color: "var(--color-cream)", opacity: 0.45 }}>
+          <address className="not-italic text-[0.73rem] leading-[2.1] font-bold" style={{ color: "var(--color-cream)", opacity: 0.85 }}>
             Roti Gembul<br />
-            St. Georges Square<br />
-            Valletta, VLT 1190<br />
-            Malta
+            Jl. Soekarno Hatta, Drojogan 05/03<br />
+            Bumirejo, Mungkid, Magelang<br />
+            Jawa Tengah
           </address>
         </div>
 
         {/* Hours */}
         <div>
           <h5 className="text-[0.58rem] tracking-[0.3em] uppercase mb-5" style={{ color: "var(--color-gold)" }}>
-            Hours
+            Operational Outlet
           </h5>
-          <p className="text-[0.73rem] leading-[2.1]" style={{ color: "var(--color-cream)", opacity: 0.45 }}>
-            Lunch<br />
-            Mon – Sun, 12:30 pm<br /><br />
-            Dinner<br />
-            Mon – Sun, 6:30 pm
+          <p className="text-[0.73rem] leading-[2.1] font-bold" style={{ color: "var(--color-cream)", opacity: 0.85 }}>
+            Sunday - Monday<br />
+            10.00 - 22.00
           </p>
         </div>
       </div>
