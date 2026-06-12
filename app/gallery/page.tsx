@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import PageLayout from "@/components/PageLayout";
+import { Button } from "@/components/animate-ui/components/buttons/button";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -75,13 +76,14 @@ export default function GalleryPage() {
       {/* Filters */}
       <div className="flex justify-center gap-8 py-10 border-b px-6" style={{ backgroundColor: "var(--color-dark)", borderColor: "rgba(184,150,90,0.15)" }}>
         {categories.map((cat) => (
-          <button key={cat} onClick={() => setActiveFilter(cat)}
-            className={`text-[0.65rem] tracking-[0.25em] uppercase transition-all duration-300 pb-1 border-b ${
-              activeFilter === cat ? "border-[#b8965a]" : "border-transparent opacity-40 hover:opacity-70"
+          <Button key={cat} onClick={() => setActiveFilter(cat)}
+            variant="link"
+            className={`text-[0.65rem] tracking-[0.25em] uppercase pb-1 rounded-none border-b ${
+              activeFilter === cat ? "border-[#b8965a] opacity-100" : "border-transparent opacity-40 hover:opacity-70"
             }`}
-            style={{ color: "var(--color-cream)", backgroundColor: "transparent", cursor: "none" }}>
+            style={{ color: "var(--color-cream)", backgroundColor: "transparent" }}>
             {cat}
-          </button>
+          </Button>
         ))}
       </div>
 

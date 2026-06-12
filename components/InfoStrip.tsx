@@ -28,8 +28,9 @@ export default function InfoStrip() {
           title: "Opening Hours",
           content: (
             <>
-              Lunch: Mon – Sun<br />from 12:30 pm<br /><br />
-              Dinner: Mon – Sun<br />from 6:30 pm
+              Daily: Mon – Sun<br />
+              10.00 AM – 10.00 PM<br /><br />
+              Freshly baked every day.
             </>
           ),
         },
@@ -38,9 +39,9 @@ export default function InfoStrip() {
           content: (
             <>
               Roti Gembul<br />
-              St. Georges Square<br />
-              Valletta, VLT 1190<br />
-              Malta
+              Jl. Soekarno Hatta, Drojogan 05/03<br />
+              Bumirejo, Mungkid, Magelang<br />
+              Jawa Tengah
             </>
           ),
         },
@@ -48,9 +49,9 @@ export default function InfoStrip() {
           title: "Get In Touch",
           content: (
             <>
-              info@rotigembul.com<br />
-              +356 79 264 613<br /><br />
-              Reservations recommended.<br />Smart casual dress code.
+              gembonggembul.id@gmail.com<br />
+              +62 852-2292-8866<br /><br />
+              Order online or visit us.<br />Delivery partners available.
             </>
           ),
         },

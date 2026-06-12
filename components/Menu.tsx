@@ -2,6 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Button } from "@/components/animate-ui/components/buttons/button";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -124,26 +125,15 @@ export default function Menu() {
       {/* Tabs */}
       <div className="flex flex-wrap justify-center gap-3 md:gap-4 mb-16">
         {(Object.keys(menus) as MenuKey[]).map((key) => (
-          <button
+          <Button
             key={key}
             onClick={() => switchTab(key)}
-            className={`inline-flex items-center justify-center text-[0.78rem] md:text-[0.85rem] font-semibold tracking-[0.12em] uppercase px-6 md:px-8 py-4 rounded-full border transition-all duration-300 ${
-              active === key
-                ? "shadow-md hover:opacity-95"
-                : "hover:bg-[rgba(26,22,16,0.04)]"
-            }`}
-            style={{
-              color: active === key ? "#FFFFFF" : "var(--color-dark)",
-              backgroundColor: active === key ? "var(--color-dark)" : "transparent",
-              borderColor: active === key ? "var(--color-dark)" : "rgba(26,22,16,0.22)",
-              cursor: "pointer",
-              paddingTop: "14px",
-              paddingBottom: "14px",
-              lineHeight: "1",
-            }}
+            variant={active === key ? "default" : "secondary"}
+            size="lg"
+            className={active === key ? "shadow-md hover:opacity-95" : ""}
           >
             {menus[key].label}
-          </button>
+          </Button>
         ))}
       </div>
 

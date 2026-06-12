@@ -2,6 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import PageLayout from "@/components/PageLayout";
+import { Button } from "@/components/animate-ui/components/buttons/button";
 
 const outlets = [
   {
@@ -98,18 +99,20 @@ export default function OutletPage() {
             </p>
             <div className="space-y-3">
               {outlets.map((o) => (
-                <button
+                <Button
                   key={o.id}
                   onClick={() => selectOutlet(o)}
-                  className={`w-full text-left p-6 rounded-xl border transition-all duration-300 ${
+                  variant="ghost"
+                  hoverScale={1.01}
+                  tapScale={0.98}
+                  className={`w-full text-left p-6 rounded-xl border transition-all duration-300 block h-auto justify-start font-normal tracking-normal uppercase-none select-text ${
                     active.id === o.id
-                      ? "shadow-lg scale-[1.01]"
+                      ? "shadow-lg"
                       : "hover:bg-[rgba(255,255,255,0.03)]"
                   }`}
                   style={{
                     backgroundColor: active.id === o.id ? "var(--color-charcoal)" : "transparent",
                     borderColor: active.id === o.id ? "var(--color-gold)" : "rgba(184,150,90,0.15)",
-                    cursor: "pointer"
                   }}
                 >
                   <span className="block text-[0.58rem] tracking-[0.25em] uppercase mb-2" style={{ color: "var(--color-gold)" }}>
@@ -125,7 +128,7 @@ export default function OutletPage() {
                       <p>🕒 {o.hours}</p>
                     </div>
                   )}
-                </button>
+                </Button>
               ))}
             </div>
           </div>

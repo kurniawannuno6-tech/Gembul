@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import PageLayout from "@/components/PageLayout";
+import { Button } from "@/components/animate-ui/components/buttons/button";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -187,11 +188,12 @@ export default function CareerPage() {
                 </div>
               </div>
 
-              <button data-reveal type="submit"
-                className="w-full mt-6 text-[0.68rem] tracking-[0.25em] uppercase px-12 py-4 transition-all duration-300 hover:opacity-85"
-                style={{ backgroundColor: "var(--color-gold)", color: "var(--color-dark)", cursor: "pointer" }}>
+              <Button data-reveal type="submit"
+                variant="gold"
+                size="lg"
+                className="w-full mt-6">
                 Submit Application
-              </button>
+              </Button>
             </form>
           ) : (
             <div className="py-16 text-center max-w-md mx-auto">

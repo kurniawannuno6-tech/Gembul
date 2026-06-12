@@ -51,8 +51,16 @@ export default function Home() {
     };
   }, []);
 
-  // Stable callback so the Loader's useEffect doesn't re-fire on re-renders
   const handleComplete = useCallback(() => setLoaded(true), []);
+
+  useEffect(() => {
+    if (loaded) {
+      const timer = setTimeout(() => {
+        ScrollTrigger.refresh();
+      }, 200);
+      return () => clearTimeout(timer);
+    }
+  }, [loaded]);
 
   return (
     <>

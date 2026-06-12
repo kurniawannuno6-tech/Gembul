@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
+import { Button } from "@/components/animate-ui/components/buttons/button";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -241,17 +242,12 @@ export default function Promo() {
                 </div>
 
                 {/* Claim Button */}
-                <button
+                <Button
                   onClick={() => setSelectedPromo(promo)}
-                  className="w-full inline-flex items-center justify-center text-[0.72rem] tracking-[0.15em] font-semibold uppercase py-3.5 px-6 rounded-full border transition-all duration-300 bg-[var(--color-dark)] text-white hover:bg-transparent hover:text-[var(--color-dark)]"
-                  style={{
-                    borderColor: "var(--color-dark)",
-                    cursor: "pointer",
-                    lineHeight: "1"
-                  }}
+                  className="w-full"
                 >
                   Claim Promo
-                </button>
+                </Button>
               </div>
             </div>
           </div>
@@ -292,13 +288,14 @@ export default function Promo() {
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-              <button
+              <Button
                 onClick={() => setSelectedPromo(null)}
+                variant="ghost"
+                size="icon"
                 className="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/20 hover:bg-white/40 text-white flex items-center justify-center border border-white/20 transition-colors duration-200"
-                style={{ cursor: "pointer" }}
               >
                 ✕
-              </button>
+              </Button>
               <div className="absolute bottom-4 left-6 right-6">
                 <span
                   className="text-[0.55rem] font-bold tracking-[0.15em] uppercase px-2.5 py-1 rounded-full text-white inline-block mb-2 shadow-sm"
@@ -364,19 +361,13 @@ export default function Promo() {
 
             {/* Modal Footer */}
             <div className="p-4 md:p-6 border-t border-[rgba(99,40,22,0.08)] text-center flex-shrink-0">
-              <button
+              <Button
                 onClick={() => setSelectedPromo(null)}
-                className="w-full inline-flex items-center justify-center text-[0.72rem] tracking-[0.15em] font-semibold uppercase py-3.5 px-6 rounded-full border transition-all duration-300 hover:bg-[var(--color-dark)] hover:text-white"
-                style={{
-                  color: "var(--color-dark)",
-                  borderColor: "var(--color-dark)",
-                  backgroundColor: "transparent",
-                  cursor: "pointer",
-                  lineHeight: "1"
-                }}
+                variant="outline"
+                className="w-full"
               >
                 Close Window
-              </button>
+              </Button>
             </div>
           </div>
         </div>

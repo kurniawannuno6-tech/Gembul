@@ -1,11 +1,5 @@
 "use client";
-import { useEffect, useRef } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
 import Link from "next/link";
-
-gsap.registerPlugin(ScrollTrigger);
 
 const merchants = [
   {
@@ -29,18 +23,8 @@ const merchants = [
 ];
 
 export default function Footer() {
-  const footerRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    gsap.fromTo(footerRef.current, { opacity: 0, y: 40 }, {
-      opacity: 1, y: 0, duration: 1, ease: "power3.out",
-      scrollTrigger: { trigger: footerRef.current, start: "top 90%", once: true },
-    });
-  }, []);
-
   return (
     <footer
-      ref={footerRef}
       id="contact"
       className="px-10 md:px-20 pt-20 pb-10 border-t"
       style={{ backgroundColor: "var(--color-gold)", borderColor: "rgba(99,40,22,0.18)" }}
@@ -58,10 +42,6 @@ export default function Footer() {
               className="h-10 w-auto object-contain select-none pointer-events-none"
             />
           </Link>
-          <p className="text-[0.73rem] leading-[1.95] max-w-[220px] font-bold" style={{ color: "var(--color-charcoal)", opacity: 0.85 }}>
-            An epicurean blend of magnetic charisma, old world charm and relaxed
-            elegance in Magelang.
-          </p>
           <div className="flex gap-3 mt-7">
             <a
               href="https://www.instagram.com/rotigembonggembul.id?igsh=MWluMzBlOXc5Y2hpbg%3D%3D&utm_source=qr"
@@ -109,11 +89,11 @@ export default function Footer() {
             </li>
             <li>
               <a
-                href="tel:+35679264613"
+                href="tel:+6285222928866"
                 className="text-[0.73rem] tracking-[0.04em] font-bold transition-opacity duration-300 hover:opacity-100 block"
                 style={{ color: "var(--color-charcoal)", opacity: 0.85, cursor: "pointer" }}
               >
-                +356 79 264 613
+                +62 852-2292-8866
               </a>
             </li>
           </ul>

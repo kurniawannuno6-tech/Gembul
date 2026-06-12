@@ -11,13 +11,21 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function PageLayout({ children }: { children: React.ReactNode }) {
   const mainRef = useRef<HTMLDivElement>(null);
-
   useEffect(() => {
     // Fade the page in after transition curtain lifts
     gsap.fromTo(
       mainRef.current,
       { opacity: 0, y: 18 },
-      { opacity: 1, y: 0, duration: 0.7, ease: "power3.out", delay: 0.55 }
+      { 
+        opacity: 1, 
+        y: 0, 
+        duration: 0.7, 
+        ease: "power3.out", 
+        delay: 0.55,
+        onComplete: () => {
+          ScrollTrigger.refresh();
+        }
+      }
     );
 
     const mql = window.matchMedia("(hover: hover) and (pointer: fine)");

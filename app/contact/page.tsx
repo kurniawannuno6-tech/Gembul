@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import PageLayout from "@/components/PageLayout";
+import { Button } from "@/components/animate-ui/components/buttons/button";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -68,13 +69,12 @@ export default function ContactPage() {
               {/* Meal type */}
               <div data-reveal className="flex gap-6 mb-10">
                 {["lunch", "dinner", "private"].map((t) => (
-                  <button key={t} onClick={() => setForm({ ...form, type: t })}
-                    className={`text-[0.63rem] tracking-[0.2em] uppercase px-5 py-2 border transition-all duration-300 ${
-                      form.type === t ? "border-[#b8965a] text-[#b8965a]" : "opacity-40 hover:opacity-70"
-                    }`}
-                    style={{ borderColor: form.type === t ? "var(--color-gold)" : "rgba(184,150,90,0.3)", color: form.type === t ? "var(--color-gold)" : "var(--color-cream)", backgroundColor: "transparent", cursor: "none" }}>
+                  <Button key={t} onClick={() => setForm({ ...form, type: t })}
+                    variant={form.type === t ? "goldOutline" : "creamOutline"}
+                    size="sm"
+                    className={form.type === t ? "" : "opacity-40 hover:opacity-70"}>
                     {t.charAt(0).toUpperCase() + t.slice(1)}
-                  </button>
+                  </Button>
                 ))}
               </div>
 
@@ -107,13 +107,14 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              <button data-reveal onClick={handleSubmit}
-                className="mt-12 text-[0.68rem] tracking-[0.25em] uppercase px-12 py-4 transition-all duration-300 hover:opacity-80"
-                style={{ backgroundColor: "var(--color-gold)", color: "var(--color-dark)", cursor: "none" }}>
+              <Button data-reveal onClick={handleSubmit}
+                variant="gold"
+                size="lg"
+                className="mt-12">
                 Request Reservation
-              </button>
-              <p data-reveal className="mt-4 text-[0.63rem]" style={{ color: "var(--color-cream)", opacity: 0.35 }}>
-                Or call us directly: <a href="tel:+35679264613" className="hover:opacity-80" style={{ color: "var(--color-gold)" }}>+356 79 264 613</a>
+              </Button>
+               <p data-reveal className="mt-4 text-[0.63rem]" style={{ color: "var(--color-cream)", opacity: 0.35 }}>
+                Or call us directly: <a href="tel:+6285222928866" className="hover:opacity-80" style={{ color: "var(--color-gold)" }}>+62 852-2292-8866</a>
               </p>
             </>
           ) : (
@@ -136,8 +137,8 @@ export default function ContactPage() {
           {[
             { title: "Location", lines: ["Roti Gembul", "Jl. Soekarno Hatta, Drojogan 05/03", "Bumirejo, Mungkid, Magelang", "Jawa Tengah"] },
             { title: "Opening Hours", lines: ["Sunday - Monday", "from 10:00 am to 10.00 pm"] },
-            { title: "Contact", lines: ["gembonggembul.id@gmail.com", "+356 79 264 613"] },
-            { title: "Dress Code", lines: ["Smart casual.", "We ask guests to refrain"] },
+            { title: "Contact", lines: ["gembonggembul.id@gmail.com", "+62 852-2292-8866"] },
+            { title: "Delivery Partners", lines: ["GoFood, GrabFood", "ShopeeFood"] },
           ].map((block) => (
             <div key={block.title} data-item className="mb-12 pb-12 border-b last:border-0 last:mb-0 last:pb-0"
               style={{ borderColor: "rgba(184,150,90,0.12)" }}>
