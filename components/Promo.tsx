@@ -189,11 +189,11 @@ export default function Promo() {
           <div
             key={promo.id}
             data-card
-            className="flex flex-col border rounded-2xl overflow-hidden shadow-md bg-[var(--color-cream)] group transition-all duration-500 hover:-translate-y-2 hover:shadow-xl"
+            className="flex flex-col border rounded-2xl shadow-md bg-[var(--color-cream)] group transition-all duration-500 hover:-translate-y-2 hover:shadow-xl p-6 md:p-8"
             style={{ borderColor: "rgba(99,40,22,0.08)" }}
           >
-            {/* Promo Image */}
-            <div className="relative overflow-hidden aspect-[4/3] bg-gray-100">
+            {/* Promo Image — inset with border outline */}
+            <div className="relative overflow-hidden aspect-[4/3] bg-gray-100 rounded-xl border" style={{ borderColor: "rgba(99,40,22,0.1)" }}>
               <img
                 src={promo.image}
                 alt={promo.title}
@@ -213,23 +213,23 @@ export default function Promo() {
               </span>
             </div>
 
-            {/* Content Container */}
-            <div className="p-6 md:p-8 flex-1 flex flex-col justify-between">
+            {/* Content — centered, padding inherited from card wrapper */}
+            <div className="pt-7 flex-auto flex flex-col justify-between text-center">
               <div>
                 <h3
-                  className="text-xl font-medium mb-3 group-hover:text-[var(--color-dark)] transition-colors duration-300 leading-snug"
+                  className="text-xl font-semibold mb-3 group-hover:text-[var(--color-dark)] transition-colors duration-300 leading-snug"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
                   {promo.title}
                 </h3>
-                <p className="text-xs md:text-[0.78rem] leading-[1.7] opacity-80 mb-6" style={{ color: "var(--color-warm-gray)" }}>
+                <p className="text-xs md:text-[0.78rem] leading-[1.8] opacity-80 mb-6" style={{ color: "var(--color-warm-gray)" }}>
                   {promo.desc}
                 </p>
               </div>
 
               <div>
-                {/* Meta details / Price / Time */}
-                <div className="flex items-center justify-between border-t border-[rgba(99,40,22,0.08)] pt-4 mb-5">
+                {/* Price / Availability */}
+                <div className="flex items-center justify-between border-t border-[rgba(99,40,22,0.08)] pt-4 mb-5 text-left">
                   <div className="flex flex-col">
                     <span className="text-[0.55rem] tracking-[0.1em] uppercase opacity-55">Offer Price</span>
                     <div className="flex items-baseline gap-2">
@@ -246,12 +246,13 @@ export default function Promo() {
                 </div>
 
                 {/* Claim Button */}
-                <Button
-                  onClick={() => setSelectedPromo(promo)}
-                  className="w-full"
-                >
-                  Claim Promo
-                </Button>
+                <div className="flex justify-center">
+                  <Button
+                    onClick={() => setSelectedPromo(promo)}
+                  >
+                    Claim Promo
+                  </Button>
+                </div>
               </div>
             </div>
           </div>

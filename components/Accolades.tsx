@@ -39,11 +39,7 @@ export default function Accolades() {
     <section
       id="accolades"
       ref={sectionRef}
-      className="relative min-h-[75vh] flex items-center py-24 overflow-hidden"
-      style={{
-        paddingLeft: "clamp(4rem, 20vw, 24rem)",
-        paddingRight: "clamp(2rem, 5vw, 6rem)"
-      }}
+      className="relative min-h-[75vh] flex items-center justify-center py-24 px-6 md:px-16 lg:px-24 overflow-hidden"
     >
       {/* Background Image */}
       <div
@@ -51,18 +47,18 @@ export default function Accolades() {
         style={{ backgroundImage: "url('/images/accolades-bg.png')" }}
       />
 
-      {/* Dark gradient overlay for text readability */}
+      {/* Dark overlay for text readability */}
       <div
         className="absolute inset-0"
         style={{
-          background: "linear-gradient(to right, rgba(26,22,16,0.85) 0%, rgba(26,22,16,0.6) 50%, rgba(26,22,16,0.85) 100%)",
+          background: "rgba(26, 22, 16, 0.7)",
         }}
       />
 
       {/* Text panel */}
       <div
         ref={contentRef}
-        className="relative z-10 max-w-xl w-full"
+        className="relative z-10 max-w-xl w-full mx-auto"
       >
         <p data-reveal className="text-[0.6rem] tracking-[0.4em] uppercase mb-6" style={{ color: "var(--color-gold)", opacity: 0.9 }}>
           Recognition

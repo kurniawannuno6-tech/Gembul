@@ -20,9 +20,9 @@ const buttonVariants = cva(
         creamOutline: "bg-transparent border border-[rgba(184,150,90,0.3)] text-[var(--color-cream)] hover:border-[var(--color-gold)] hover:text-[var(--color-gold)] transition-all duration-300",
       },
       size: {
-        default: "text-[0.72rem] py-3.5 px-6 leading-none",
-        sm: "text-[0.63rem] py-2 px-5 leading-none",
-        lg: "text-[0.85rem] py-4 px-8 leading-none",
+        default: "text-[0.72rem] py-4 px-8 md:px-12 leading-none",
+        sm: "text-[0.63rem] py-2.5 px-6 md:px-10 leading-none",
+        lg: "text-[0.85rem] py-5 px-10 md:px-16 leading-none",
         icon: "h-9 w-9 rounded-full p-0 flex items-center justify-center leading-none",
       },
     },

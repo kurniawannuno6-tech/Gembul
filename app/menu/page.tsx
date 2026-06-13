@@ -187,11 +187,11 @@ export default function MenuPage() {
               {current.items.map((item) => (
                 <div
                   key={item.name}
-                  className="flex flex-col border rounded-xl overflow-hidden shadow-md group transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+                  className="flex flex-col border rounded-xl shadow-md group transition-all duration-300 hover:-translate-y-1 hover:shadow-lg p-5 md:p-6"
                   style={{ borderColor: "rgba(26,22,16,0.06)", backgroundColor: "var(--color-cream)" }}
                 >
-                  {/* Product Image */}
-                  <div className="relative overflow-hidden aspect-[4/3] bg-gray-100">
+                  {/* Product Image — inset with border outline */}
+                  <div className="relative overflow-hidden aspect-[4/3] bg-gray-100 rounded-lg border" style={{ borderColor: "rgba(26,22,16,0.08)" }}>
                     <img
                       src={item.image}
                       alt={item.name}
@@ -199,22 +199,20 @@ export default function MenuPage() {
                     />
                     <div className="absolute inset-3 border pointer-events-none" style={{ borderColor: "rgba(26,22,16,0.05)" }} />
                   </div>
-                  {/* Content */}
-                  <div className="p-6 md:p-7 flex-1 flex flex-col justify-between">
+                  {/* Content — centered, padding inherited from card wrapper */}
+                  <div className="pt-5 flex-auto flex flex-col justify-between text-center">
                     <div>
-                      <div className="flex justify-between items-baseline gap-2 mb-2">
-                        <h4
-                          className="text-[1rem] font-semibold transition-colors duration-300 group-hover:text-[var(--color-gold)] leading-snug"
-                          style={{ fontFamily: "var(--font-display)", color: "var(--color-dark)" }}
-                        >
-                          {item.name}
-                        </h4>
-                      </div>
-                      <p className="text-[0.73rem] leading-[1.6] text-warm-gray opacity-85 mb-4">
+                      <h4
+                        className="text-[1rem] font-semibold transition-colors duration-300 group-hover:text-[var(--color-gold)] leading-snug mb-2"
+                        style={{ fontFamily: "var(--font-display)", color: "var(--color-dark)" }}
+                      >
+                        {item.name}
+                      </h4>
+                      <p className="text-[0.73rem] leading-[1.7] text-warm-gray opacity-85 mb-4">
                         {item.desc}
                       </p>
                     </div>
-                    <div className="border-t pt-3 flex justify-between items-center" style={{ borderColor: "rgba(26,22,16,0.06)" }}>
+                    <div className="border-t pt-3 flex justify-between items-center text-left" style={{ borderColor: "rgba(26,22,16,0.06)" }}>
                       <span className="text-sm font-semibold" style={{ color: "var(--color-gold)" }}>
                         {item.price}
                       </span>
