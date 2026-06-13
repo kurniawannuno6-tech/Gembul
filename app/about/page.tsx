@@ -40,20 +40,9 @@ export default function AboutPage() {
       const heroItems = heroRef.current?.querySelectorAll("[data-reveal]") ?? [];
       gsap.fromTo(heroItems, { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 1, stagger: 0.15, ease: "power3.out", delay: 0.4 });
 
-      // Story section: image clips in, text slides in
-      const storyEl = storyRef.current;
-      if (storyEl) {
-        const img = storyEl.querySelector("img");
-        if (img) {
-          gsap.fromTo(img,
-            { clipPath: "inset(100% 0 0 0)" },
-            { clipPath: "inset(0% 0 0 0)", duration: 1.4, ease: "power4.inOut",
-              scrollTrigger: { trigger: storyEl, start: "top 75%", once: true } }
-          );
-        }
-      }
+      // Story section: text fades up on scroll
       const storyItems = storyRef.current?.querySelectorAll("[data-reveal]") ?? [];
-      gsap.fromTo(storyItems, { opacity: 0, x: 40 }, { opacity: 1, x: 0, duration: 1, stagger: 0.12, ease: "power3.out",
+      gsap.fromTo(storyItems, { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 1, stagger: 0.12, ease: "power3.out",
         scrollTrigger: { trigger: storyRef.current, start: "top 75%", once: true } });
 
       // Philosophy pillars fade up
@@ -94,47 +83,46 @@ export default function AboutPage() {
         </div>
       </div>
 
-      {/* Story section — image left, text right */}
-      <section ref={storyRef} className="grid md:grid-cols-[30%_70%] min-h-[80vh]">
+      <section
+        ref={storyRef}
+        className="relative min-h-[80vh] flex items-center py-24 overflow-hidden"
+        style={{
+          paddingLeft: "clamp(4rem, 20vw, 24rem)",
+          paddingRight: "clamp(2rem, 5vw, 6rem)"
+        }}
+      >
+        {/* Background Image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: "url('/images/about-story.png')" }}
+        />
 
-        {/* ===================================================================
-            ABOUT STORY IMAGE
-            - Place your image in: /public/images/about-story.jpg
-            - Recommended size: 900 × 1100 px portrait
-            - Tips: interior detail — table candles, decor, architectural shot
-            =================================================================== */}
-        <div className="relative overflow-hidden min-h-[400px] md:min-h-0">
-          <img src="/images/about-story.jpg" alt="Roti Gembul Interior" className="w-full h-full object-cover" />
-          <div className="absolute inset-5 border pointer-events-none" style={{ borderColor: "rgba(184,150,90,0.25)" }} />
-        </div>
+        {/* Dark gradient overlay for text readability */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background: "linear-gradient(to right, rgba(26,22,16,0.85) 0%, rgba(26,22,16,0.6) 50%, rgba(26,22,16,0.85) 100%)",
+          }}
+        />
 
         {/* Story text panel */}
-        <div
-          className="flex flex-col justify-center py-24"
-          style={{
-            backgroundColor: "#fbb71d",
-            paddingLeft: "clamp(2rem, 6vw, 7rem)",
-            paddingRight: "clamp(2rem, 5vw, 6rem)"
-          }}
-        >
-          <div className="max-w-xl w-full">
-            <p data-reveal className="text-[0.6rem] tracking-[0.4em] uppercase mb-6" style={{ color: "var(--color-charcoal)", opacity: 0.9 }}>
-              Est. 2021
-            </p>
-            <h2 data-reveal className="text-[clamp(2rem,4vw,3.2rem)] font-light leading-[1.15] mb-8"
-              style={{ fontFamily: "var(--font-display)", color: "var(--color-charcoal)" }}>
-              Kisah Kehangatan<br />Roti Gembul
-            </h2>
-            <p data-reveal className="text-[0.8rem] leading-[2.1] mb-5" style={{ color: "var(--color-charcoal)", opacity: 0.85 }}>
-              Berawal di Magelang, Jawa Tengah, Roti Gembong Gembul lahir untuk menyajikan rasa roti gembong tradisional dengan tekstur super lembut dan variasi rasa modern yang lezat.
-            </p>
-            <p data-reveal className="text-[0.8rem] leading-[2.1] mb-5" style={{ color: "var(--color-charcoal)", opacity: 0.85 }}>
-              Didirikan oleh sepasang suami istri, Yuyun dan Nadya, kami berkomitmen pada kualitas roti fresh-baked setiap hari. Konsep Show Kitchen kami memungkinkan pelanggan melihat proses pengolahan roti secara langsung dan higienis.
-            </p>
-            <p data-reveal className="text-[0.8rem] leading-[2.1]" style={{ color: "var(--color-charcoal)", opacity: 0.85 }}>
-              Kini, kelembutan Roti Gembul telah menjangkau hati jutaan masyarakat Indonesia melalui lebih dari 200 gerai yang beroperasi aktif dengan kehangatan rasa sejati.
-            </p>
-          </div>
+        <div className="relative z-10 max-w-xl w-full">
+          <p data-reveal className="text-[0.6rem] tracking-[0.4em] uppercase mb-6" style={{ color: "var(--color-gold)", opacity: 0.9 }}>
+            Est. 2021
+          </p>
+          <h2 data-reveal className="text-[clamp(2rem,4vw,3.2rem)] font-light leading-[1.15] mb-8"
+            style={{ fontFamily: "var(--font-display)", color: "var(--color-cream)" }}>
+            Kisah Kehangatan<br />Roti Gembul
+          </h2>
+          <p data-reveal className="text-[0.8rem] leading-[2.1] mb-5" style={{ color: "var(--color-cream)", opacity: 0.85 }}>
+            Berawal di Magelang, Jawa Tengah, Roti Gembong Gembul lahir untuk menyajikan rasa roti gembong tradisional dengan tekstur super lembut dan variasi rasa modern yang lezat.
+          </p>
+          <p data-reveal className="text-[0.8rem] leading-[2.1] mb-5" style={{ color: "var(--color-cream)", opacity: 0.85 }}>
+            Didirikan oleh sepasang suami istri, Yuyun dan Nadya, kami berkomitmen pada kualitas roti fresh-baked setiap hari. Konsep Show Kitchen kami memungkinkan pelanggan melihat proses pengolahan roti secara langsung dan higienis.
+          </p>
+          <p data-reveal className="text-[0.8rem] leading-[2.1]" style={{ color: "var(--color-cream)", opacity: 0.85 }}>
+            Kini, kelembutan Roti Gembul telah menjangkau hati jutaan masyarakat Indonesia melalui lebih dari 200 gerai yang beroperasi aktif dengan kehangatan rasa sejati.
+          </p>
         </div>
       </section>
 
