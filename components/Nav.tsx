@@ -45,13 +45,13 @@ export default function Nav({ visible }: { visible: boolean }) {
       <nav
         ref={navRef}
         className={`fixed top-0 left-0 right-0 z-[100] h-20 grid items-center transition-all duration-500 ${
-          scrolled ? "backdrop-blur-md border-b" : ""
+          scrolled ? "backdrop-blur-md border-b shadow-sm" : "border-b"
         }`}
         style={{
           gridTemplateColumns: "1fr auto 1fr",
           padding: "0 clamp(2.5rem, 6vw, 6rem)",
-          backgroundColor: scrolled ? "rgba(26,22,16,0.92)" : "transparent",
-          borderColor: "rgba(184,150,90,0.2)",
+          backgroundColor: scrolled ? "rgba(251, 183, 29, 0.95)" : "#fbb71d",
+          borderColor: "rgba(99,40,22,0.12)",
           opacity: 0,
         }}
       >
@@ -59,11 +59,11 @@ export default function Nav({ visible }: { visible: boolean }) {
         <ul className="hidden md:flex gap-10 list-none">
           {navLinks.map((l) => (
             <li key={l.label}>
-              <Link href={l.href} className={linkClass} style={{ color: "var(--color-cream)", opacity: 0.8 }}>
+              <Link href={l.href} className={linkClass} style={{ color: "var(--color-charcoal)", opacity: 0.9 }}>
                 {l.label}
                 <span
                   className="absolute -bottom-1 left-0 right-0 h-px scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
-                  style={{ backgroundColor: "var(--color-gold)" }}
+                  style={{ backgroundColor: "var(--color-charcoal)" }}
                 />
               </Link>
             </li>
@@ -87,11 +87,11 @@ export default function Nav({ visible }: { visible: boolean }) {
           <ul className="flex gap-10 list-none">
             {navLinksRight.map((l) => (
               <li key={l.label}>
-                <Link href={l.href} className={linkClass} style={{ color: "var(--color-cream)", opacity: 0.8 }}>
+                <Link href={l.href} className={linkClass} style={{ color: "var(--color-charcoal)", opacity: 0.9 }}>
                   {l.label}
                   <span
                     className="absolute -bottom-1 left-0 right-0 h-px scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
-                    style={{ backgroundColor: "var(--color-gold)" }}
+                    style={{ backgroundColor: "var(--color-charcoal)" }}
                   />
                 </Link>
               </li>
@@ -107,15 +107,15 @@ export default function Nav({ visible }: { visible: boolean }) {
         >
           <span
             className={`block h-px w-6 transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-[7px]" : ""}`}
-            style={{ backgroundColor: "var(--color-gold)" }}
+            style={{ backgroundColor: "var(--color-charcoal)" }}
           />
           <span
             className={`block h-px w-6 transition-all duration-300 ${menuOpen ? "opacity-0" : ""}`}
-            style={{ backgroundColor: "var(--color-gold)" }}
+            style={{ backgroundColor: "var(--color-charcoal)" }}
           />
           <span
             className={`block h-px w-6 transition-all duration-300 ${menuOpen ? "-rotate-45 -translate-y-[7px]" : ""}`}
-            style={{ backgroundColor: "var(--color-gold)" }}
+            style={{ backgroundColor: "var(--color-charcoal)" }}
           />
         </button>
       </nav>
@@ -125,7 +125,7 @@ export default function Nav({ visible }: { visible: boolean }) {
         className={`fixed inset-0 z-[99] flex flex-col items-center justify-center gap-10 transition-all duration-500 md:hidden ${
           menuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
-        style={{ backgroundColor: "rgba(15,13,9,0.97)" }}
+        style={{ backgroundColor: "#fbb71d" }}
       >
         {[...navLinks, ...navLinksRight].map((l) => (
           <Link
@@ -133,7 +133,7 @@ export default function Nav({ visible }: { visible: boolean }) {
             href={l.href}
             onClick={() => setMenuOpen(false)}
             className="text-3xl font-light tracking-[0.15em] uppercase"
-            style={{ fontFamily: "var(--font-display)", color: "var(--color-cream)" }}
+            style={{ fontFamily: "var(--font-display)", color: "var(--color-charcoal)" }}
           >
             {l.label}
           </Link>

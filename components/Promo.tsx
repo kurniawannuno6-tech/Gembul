@@ -31,7 +31,7 @@ const promos: PromoItem[] = [
     price: "Rp 29k",
     oldPrice: "Rp 35k",
     time: "Daily 7:00 AM – 11:00 AM",
-    image: "/images/menu-drinks.png",
+    image: "/images/menu-kopisusu.jpg",
     code: "GEMBULCOFFEE",
     terms: [
       "Valid for dine-in and takeaway",
@@ -47,7 +47,7 @@ const promos: PromoItem[] = [
     desc: "Make your afternoon break sweeter. Purchase any three sweet or fruit buns, and receive a classic, pillow-soft Vanilla Glaze bun absolutely free.",
     price: "Buy 3 Get 1",
     time: "Daily 2:00 PM – 5:00 PM",
-    image: "/images/menu-sweet-2.png",
+    image: "/images/menu-mesescokelat.jpg",
     code: "GEMBULTEATIME",
     terms: [
       "Free item is fixed to the Classic Vanilla Glaze bun",
@@ -64,7 +64,7 @@ const promos: PromoItem[] = [
     price: "Rp 99k",
     oldPrice: "Rp 114k",
     time: "Friday – Sunday (All Day)",
-    image: "/images/menu-crunchy.png",
+    image: "/images/menu-almond.jpg",
     code: "GEMBULSHARING",
     terms: [
       "Choose any combination of six buns (excluding premium savory specials)",
@@ -80,43 +80,47 @@ export default function Promo() {
   const [selectedPromo, setSelectedPromo] = useState<PromoItem | null>(null);
 
   useEffect(() => {
-    // Reveal header
-    const headerItems = headerRef.current?.querySelectorAll("[data-reveal]") ?? [];
-    gsap.fromTo(
-      headerItems,
-      { opacity: 0, y: 30 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        stagger: 0.12,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: headerRef.current,
-          start: "top 85%",
-          once: true,
-        },
-      }
-    );
+    const ctx = gsap.context(() => {
+      // Reveal header
+      const headerItems = headerRef.current?.querySelectorAll("[data-reveal]") ?? [];
+      gsap.fromTo(
+        headerItems,
+        { opacity: 0, y: 30 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          stagger: 0.12,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: headerRef.current,
+            start: "top 85%",
+            once: true,
+          },
+        }
+      );
 
-    // Reveal cards
-    const cards = cardsRef.current?.querySelectorAll("[data-card]") ?? [];
-    gsap.fromTo(
-      cards,
-      { opacity: 0, y: 40 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 1.2,
-        stagger: 0.15,
-        ease: "power4.out",
-        scrollTrigger: {
-          trigger: cardsRef.current,
-          start: "top 80%",
-          once: true,
-        },
-      }
-    );
+      // Reveal cards
+      const cards = cardsRef.current?.querySelectorAll("[data-card]") ?? [];
+      gsap.fromTo(
+        cards,
+        { opacity: 0, y: 40 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1.2,
+          stagger: 0.15,
+          ease: "power4.out",
+          scrollTrigger: {
+            trigger: cardsRef.current,
+            start: "top 80%",
+            once: true,
+          },
+        }
+      );
+    });
+
+    return () => ctx.revert();
   }, []);
 
   // Prevent scroll when modal is open

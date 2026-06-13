@@ -14,10 +14,10 @@ gsap.registerPlugin(ScrollTrigger);
 // Tips: use a variety — kitchen, wine, plating, dining room
 // ============================================================================
 const images = [
-  { src: "/images/gallery-kitchen.jpg",   label: "The Kitchen" },
-  { src: "/images/gallery-wine.jpg",      label: "Fine Wines" },
-  { src: "/images/gallery-dining.jpg",    label: "Dining Room" },
-  { src: "/images/gallery-dish.jpg",      label: "Signature Dishes" },
+  { src: "/images/gallery-kitchen.jpg",   label: "Bakery Kitchen" },
+  { src: "/images/gallery-prep.jpg",      label: "Dough Crafting" },
+  { src: "/images/gallery-interior.jpg",  label: "Cozy Outlet" },
+  { src: "/images/gallery-dish.jpg",      label: "Signature Buns" },
 ];
 
 export default function Gallery() {

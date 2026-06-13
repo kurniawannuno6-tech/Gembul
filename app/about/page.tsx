@@ -15,16 +15,16 @@ gsap.registerPlugin(ScrollTrigger);
 // ============================================================================
 const team = [
   {
-    name: "Chef Isabelle Moreau",
-    role: "President",
-    img: "/images/team-chef.jpg",         // 600 × 800 px portrait
-    bio: "Trained in Paris and Tokyo, Isabelle brings 20 years of mastery to every plate — balancing classical technique with daring innovation.",
+    name: "Juniar Jais Subiyatto (Yuyun)",
+    role: "Founder & President",
+    img: "/images/team-chef.jpg",
+    bio: "Formulator utama resep Roti Gembong Gembul yang memiliki dedikasi penuh terhadap inovasi kuliner tradisional Indonesia.",
   },
   {
-    name: "Marco Vella",
-    role: "Vice President",
-    img: "/images/team-sommelier.jpg",     // 600 × 800 px portrait
-    bio: "With a cellar spanning four continents, Marco curates pairings that elevate each dish into an unforgettable sensory narrative.",
+    name: "Nadya Nafisa Fathin",
+    role: "Co-Founder & Vice President",
+    img: "/images/team-sommelier.jpg",
+    bio: "Mengembangkan standar operasional dan konsep open kitchen, menjamin konsistensi rasa dan kebersihan di 200+ gerai seluruh Indonesia.",
   },
 ];
 
@@ -35,35 +35,39 @@ export default function AboutPage() {
   const teamRef   = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Hero text fades up on load
-    const heroItems = heroRef.current?.querySelectorAll("[data-reveal]") ?? [];
-    gsap.fromTo(heroItems, { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 1, stagger: 0.15, ease: "power3.out", delay: 0.4 });
+    const ctx = gsap.context(() => {
+      // Hero text fades up on load
+      const heroItems = heroRef.current?.querySelectorAll("[data-reveal]") ?? [];
+      gsap.fromTo(heroItems, { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 1, stagger: 0.15, ease: "power3.out", delay: 0.4 });
 
-    // Story section: image clips in, text slides in
-    const storyEl = storyRef.current;
-    if (storyEl) {
-      const img = storyEl.querySelector("img");
-      if (img) {
-        gsap.fromTo(img,
-          { clipPath: "inset(100% 0 0 0)" },
-          { clipPath: "inset(0% 0 0 0)", duration: 1.4, ease: "power4.inOut",
-            scrollTrigger: { trigger: storyEl, start: "top 75%", once: true } }
-        );
+      // Story section: image clips in, text slides in
+      const storyEl = storyRef.current;
+      if (storyEl) {
+        const img = storyEl.querySelector("img");
+        if (img) {
+          gsap.fromTo(img,
+            { clipPath: "inset(100% 0 0 0)" },
+            { clipPath: "inset(0% 0 0 0)", duration: 1.4, ease: "power4.inOut",
+              scrollTrigger: { trigger: storyEl, start: "top 75%", once: true } }
+          );
+        }
       }
-    }
-    const storyItems = storyRef.current?.querySelectorAll("[data-reveal]") ?? [];
-    gsap.fromTo(storyItems, { opacity: 0, x: 40 }, { opacity: 1, x: 0, duration: 1, stagger: 0.12, ease: "power3.out",
-      scrollTrigger: { trigger: storyRef.current, start: "top 75%", once: true } });
+      const storyItems = storyRef.current?.querySelectorAll("[data-reveal]") ?? [];
+      gsap.fromTo(storyItems, { opacity: 0, x: 40 }, { opacity: 1, x: 0, duration: 1, stagger: 0.12, ease: "power3.out",
+        scrollTrigger: { trigger: storyRef.current, start: "top 75%", once: true } });
 
-    // Philosophy pillars fade up
-    const valItems = valuesRef.current?.querySelectorAll("[data-item]") ?? [];
-    gsap.fromTo(valItems, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.8, stagger: 0.1, ease: "power3.out",
-      scrollTrigger: { trigger: valuesRef.current, start: "top 80%", once: true } });
+      // Philosophy pillars fade up
+      const valItems = valuesRef.current?.querySelectorAll("[data-item]") ?? [];
+      gsap.fromTo(valItems, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.8, stagger: 0.1, ease: "power3.out",
+        scrollTrigger: { trigger: valuesRef.current, start: "top 80%", once: true } });
 
-    // Team cards stagger up
-    const teamCards = teamRef.current?.querySelectorAll("[data-card]") ?? [];
-    gsap.fromTo(teamCards, { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.9, stagger: 0.15, ease: "power3.out",
-      scrollTrigger: { trigger: teamRef.current, start: "top 80%", once: true } });
+      // Team cards stagger up
+      const teamCards = teamRef.current?.querySelectorAll("[data-card]") ?? [];
+      gsap.fromTo(teamCards, { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.9, stagger: 0.15, ease: "power3.out",
+        scrollTrigger: { trigger: teamRef.current, start: "top 80%", once: true } });
+    });
+
+    return () => ctx.revert();
   }, []);
 
   return (
@@ -91,7 +95,7 @@ export default function AboutPage() {
       </div>
 
       {/* Story section — image left, text right */}
-      <section ref={storyRef} className="grid md:grid-cols-2 min-h-[80vh]">
+      <section ref={storyRef} className="grid md:grid-cols-[30%_70%] min-h-[80vh]">
 
         {/* ===================================================================
             ABOUT STORY IMAGE
@@ -105,27 +109,32 @@ export default function AboutPage() {
         </div>
 
         {/* Story text panel */}
-        <div className="flex flex-col justify-center px-10 md:px-20 py-24" style={{ backgroundColor: "var(--color-charcoal)" }}>
-          <p data-reveal className="text-[0.6rem] tracking-[0.4em] uppercase mb-6" style={{ color: "var(--color-gold)" }}>
-            Est. 2018 · Valletta, Malta
-          </p>
-          <h2 data-reveal className="text-[clamp(2rem,4vw,3.2rem)] font-light leading-[1.15] mb-8"
-            style={{ fontFamily: "var(--font-display)", color: "var(--color-cream)" }}>
-            A Portal to<br />Culinary Excellence
-          </h2>
-          <p data-reveal className="text-[0.8rem] leading-[2.1] mb-5" style={{ color: "var(--color-cream)", opacity: 0.65 }}>
-            Located in the heart of Valletta alongside the majestic Grandmaster&apos;s Palace, Roti Gembul is your
-            gateway to international dining crafted with intention, passion, and artistry.
-          </p>
-          <p data-reveal className="text-[0.8rem] leading-[2.1] mb-5" style={{ color: "var(--color-cream)", opacity: 0.65 }}>
-            Our journey began in 2018 when Executive Chef Isabelle Moreau chose Valletta as the canvas for
-            her most ambitious project — a restaurant that would honour the island&apos;s storied past while
-            pushing the boundaries of contemporary fine dining.
-          </p>
-          <p data-reveal className="text-[0.8rem] leading-[2.1]" style={{ color: "var(--color-cream)", opacity: 0.65 }}>
-            Every detail — from the architecture of a dish to the warmth of candlelight — is curated to
-            transport you to a world where time moves slowly and pleasure reigns supreme.
-          </p>
+        <div
+          className="flex flex-col justify-center py-24"
+          style={{
+            backgroundColor: "#fbb71d",
+            paddingLeft: "clamp(2rem, 6vw, 7rem)",
+            paddingRight: "clamp(2rem, 5vw, 6rem)"
+          }}
+        >
+          <div className="max-w-xl w-full">
+            <p data-reveal className="text-[0.6rem] tracking-[0.4em] uppercase mb-6" style={{ color: "var(--color-charcoal)", opacity: 0.9 }}>
+              Est. 2021
+            </p>
+            <h2 data-reveal className="text-[clamp(2rem,4vw,3.2rem)] font-light leading-[1.15] mb-8"
+              style={{ fontFamily: "var(--font-display)", color: "var(--color-charcoal)" }}>
+              Kisah Kehangatan<br />Roti Gembul
+            </h2>
+            <p data-reveal className="text-[0.8rem] leading-[2.1] mb-5" style={{ color: "var(--color-charcoal)", opacity: 0.85 }}>
+              Berawal di Magelang, Jawa Tengah, Roti Gembong Gembul lahir untuk menyajikan rasa roti gembong tradisional dengan tekstur super lembut dan variasi rasa modern yang lezat.
+            </p>
+            <p data-reveal className="text-[0.8rem] leading-[2.1] mb-5" style={{ color: "var(--color-charcoal)", opacity: 0.85 }}>
+              Didirikan oleh sepasang suami istri, Yuyun dan Nadya, kami berkomitmen pada kualitas roti fresh-baked setiap hari. Konsep Show Kitchen kami memungkinkan pelanggan melihat proses pengolahan roti secara langsung dan higienis.
+            </p>
+            <p data-reveal className="text-[0.8rem] leading-[2.1]" style={{ color: "var(--color-charcoal)", opacity: 0.85 }}>
+              Kini, kelembutan Roti Gembul telah menjangkau hati jutaan masyarakat Indonesia melalui lebih dari 200 gerai yang beroperasi aktif dengan kehangatan rasa sejati.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -140,9 +149,9 @@ export default function AboutPage() {
         {/* Add/remove pillars here as needed */}
         <div className="grid md:grid-cols-3 gap-12 max-w-5xl mx-auto">
           {[
-            { title: "Seasonal Ingredients", icon: "✦", text: "We source the finest seasonal produce from local farmers and trusted international suppliers, letting nature dictate our menu." },
-            { title: "Artisan Craft",         icon: "✦", text: "Every technique applied in our kitchen — from classical French methods to contemporary innovation — honours the craft of cooking." },
-            { title: "Gracious Hospitality",  icon: "✦", text: "Our team anticipates every need with warmth and discretion, ensuring each visit feels like a private celebration." },
+            { title: "Premium Ingredients", icon: "✦", text: "Kami menggunakan bahan-bahan berkualitas tinggi pilihan untuk menghasilkan adonan roti gembong yang selalu empuk dan gurih." },
+            { title: "Freshly Baked",        icon: "✦", text: "Setiap roti dipanggang segar setiap hari langsung di dapur terbuka gerai kami untuk menjamin cita rasa terbaik." },
+            { title: "Warm Hospitality",     icon: "✦", text: "Kami menyambut setiap Gembudies dengan senyuman dan pelayanan yang ramah, menghadirkan kebahagiaan di setiap kunjungan." },
           ].map((v) => (
             <div key={v.title} data-item className="text-center">
               <span className="block text-2xl mb-6" style={{ color: "var(--color-gold)" }}>{v.icon}</span>
@@ -154,14 +163,14 @@ export default function AboutPage() {
       </section>
 
       {/* Team section */}
-      <section ref={teamRef} className="py-28 px-14 md:px-20 lg:px-32" style={{ backgroundColor: "var(--color-charcoal)" }}>
+      <section ref={teamRef} className="py-28 px-14 md:px-20 lg:px-32" style={{ backgroundColor: "#fbb71d" }}>
         <div className="text-center mb-20">
-          <p className="text-[0.6rem] tracking-[0.45em] uppercase mb-4" style={{ color: "var(--color-gold)" }}>The People Behind the Magic</p>
-          <h2 className="text-[clamp(2rem,4vw,3rem)] font-light" style={{ fontFamily: "var(--font-display)", color: "var(--color-cream)" }}>
+          <p className="text-[0.6rem] tracking-[0.45em] uppercase mb-4" style={{ color: "var(--color-charcoal)", opacity: 0.9 }}>The People Behind the Magic</p>
+          <h2 className="text-[clamp(2rem,4vw,3rem)] font-light" style={{ fontFamily: "var(--font-display)", color: "var(--color-charcoal)" }}>
             Meet the Team
           </h2>
         </div>
-        <div className="grid md:grid-cols-3 gap-10 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-10 max-w-3xl mx-auto">
           {team.map((member) => (
             <div key={member.name} data-card className="group">
               {/* Team member photo — see image sizes in the team array above */}
@@ -170,9 +179,9 @@ export default function AboutPage() {
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.05]" />
                 <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, transparent 50%, rgba(26,22,16,0.7) 100%)" }} />
               </div>
-              <p className="text-[0.58rem] tracking-[0.3em] uppercase mb-2" style={{ color: "var(--color-gold)" }}>{member.role}</p>
-              <h3 className="text-[1.3rem] font-light mb-3" style={{ fontFamily: "var(--font-display)", color: "var(--color-cream)" }}>{member.name}</h3>
-              <p className="text-[0.73rem] leading-[1.9]" style={{ color: "var(--color-cream)", opacity: 0.55 }}>{member.bio}</p>
+              <p className="text-[0.58rem] tracking-[0.3em] uppercase mb-2" style={{ color: "var(--color-charcoal)", opacity: 0.9 }}>{member.role}</p>
+              <h3 className="text-[1.3rem] font-light mb-3" style={{ fontFamily: "var(--font-display)", color: "var(--color-charcoal)" }}>{member.name}</h3>
+              <p className="text-[0.73rem] leading-[1.9]" style={{ color: "var(--color-charcoal)", opacity: 0.85 }}>{member.bio}</p>
             </div>
           ))}
         </div>

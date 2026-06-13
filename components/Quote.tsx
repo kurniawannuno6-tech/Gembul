@@ -12,13 +12,17 @@ export default function Quote() {
   const glowRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const tl = gsap.timeline({
-      scrollTrigger: { trigger: sectionRef.current, start: "top 70%", once: true },
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({
+        scrollTrigger: { trigger: sectionRef.current, start: "top 70%", once: true },
+      });
+
+      tl.fromTo(glowRef.current, { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 1.5, ease: "power3.out" })
+        .fromTo(quoteRef.current, { opacity: 0, y: 40 }, { opacity: 0.92, y: 0, duration: 1.1, ease: "power3.out" }, "-=1")
+        .fromTo(authorRef.current, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }, "-=0.5");
     });
 
-    tl.from(glowRef.current, { opacity: 0, scale: 0.5, duration: 1.5, ease: "power3.out" })
-      .from(quoteRef.current, { opacity: 0, y: 40, duration: 1.1, ease: "power3.out" }, "-=1")
-      .from(authorRef.current, { opacity: 0, y: 20, duration: 0.8, ease: "power3.out" }, "-=0.5");
+    return () => ctx.revert();
   }, []);
 
   return (
@@ -57,7 +61,7 @@ export default function Quote() {
         className="relative max-w-2xl mx-auto text-[clamp(1.4rem,3vw,2.3rem)] font-light italic leading-[1.55] mb-10"
         style={{ fontFamily: "var(--font-display)", color: "var(--color-cream)", opacity: 0.92 }}
       >
-        One cannot think well, love well, sleep well, if one has not dined well.
+        Kehangatan roti panggang segar setiap hari, kelembutan di setiap gigitan, membawa kebahagiaan sejati ke setiap keluarga.
       </blockquote>
 
       <div
@@ -70,7 +74,7 @@ export default function Quote() {
         className="text-[0.62rem] tracking-[0.35em] uppercase"
         style={{ color: "var(--color-gold)" }}
       >
-        Virginia Woolf
+        Resep Kehangatan Roti Gembul
       </p>
     </section>
   );

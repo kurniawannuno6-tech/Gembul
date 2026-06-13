@@ -7,18 +7,18 @@ import PageLayout from "@/components/PageLayout";
 gsap.registerPlugin(ScrollTrigger);
 
 const awards = [
-  { year: "2024", name: "Michelin Star", body: "Michelin Guide", desc: "Awarded our first Michelin star in recognition of exceptional cuisine and consistent excellence across every service." },
-  { year: "2023", name: "Best Fine Dining", body: "Malta Restaurant Awards", desc: "Voted the finest dining establishment in Malta for the second consecutive year by an independent judging panel." },
-  { year: "2022", name: "Chef of the Year", body: "European Culinary Federation", desc: "Chef Isabelle Moreau recognised as one of Europe's most innovative culinary talents." },
-  { year: "2022", name: "Wine List of the Year", body: "Wine Spectator", desc: "Our cellar of over 600 labels earned a Grand Award — the highest distinction in wine hospitality." },
-  { year: "2021", name: "Top 50 Restaurants", body: "The World's 50 Best", desc: "Roti Gembul entered the prestigious World's 50 Best list at number 43 in our region." },
-  { year: "2019", name: "Rising Star", body: "Condé Nast Traveller", desc: "Named a Rising Star restaurant to watch just one year after opening our doors in Valletta." },
+  { year: "2024", name: "Roti Gembong Terfavorit", body: "Indonesia Culinary Award", desc: "Dinobatkan sebagai brand roti gembong dengan cita rasa terfavorit pilihan konsumen di Indonesia." },
+  { year: "2023", name: "Pelopor Roti Gembong No. 1", body: "Jawa Tengah Culinary Award", desc: "Penghargaan atas dedikasi mempopulerkan kembali kuliner tradisional roti gembong dengan kualitas modern." },
+  { year: "2023", name: "Merchant Paling Populer", body: "GrabFood & GoFood Awards", desc: "Terpilih sebagai salah satu merchant roti & kue dengan pesanan terbanyak di platform pesan antar online." },
+  { year: "2022", name: "Rising Star Franchise", body: "Indonesia Franchise Opportunity", desc: "Penghargaan atas pertumbuhan kemitraan tercepat dengan membuka lebih dari 100 gerai baru dalam setahun." },
+  { year: "2021", name: "UMKM Kuliner Kreatif", body: "Kemenparekraf RI", desc: "Diakui sebagai salah satu UMKM kuliner kreatif yang sukses mengangkat jajanan lokal ke tingkat nasional." },
+  { year: "2021", name: "Best New Bakery Concept", body: "Magelang Culinary Festival", desc: "Penghargaan atas inovasi konsep dapur terbuka (Open Kitchen Show Bakery) pertama di Magelang." },
 ];
 
 const press = [
-  { outlet: "The Financial Times", quote: "A dining experience of profound beauty — where every course tells a story and every sip deepens it." },
-  { outlet: "Condé Nast Traveller", quote: "Malta's most compelling table. Roti Gembul is the kind of restaurant that justifies a trip across continents." },
-  { outlet: "Food & Wine Magazine", quote: "Chef Moreau's cooking is both daring and deeply comforting — a rare combination that only the truly gifted achieve." },
+  { outlet: "Tribun News", quote: "Inovasi rasa Roti Gembul sukses membawa roti gembong tradisional naik kelas menjadi camilan kekinian terfavorit." },
+  { outlet: "Detik Food", quote: "Konsep open kitchen dan roti yang dipanggang segar setiap hari membuat Roti Gembul memiliki daya tarik tersendiri dengan kelembutan tiada tara." },
+  { outlet: "Kompas Culinary", quote: "Lebih dari sekadar roti, Roti Gembul menghadirkan nostalgia roti gembong dengan tekstur modern yang sangat lembut dan isian melimpah." },
 ];
 
 export default function AccoladesPage() {
@@ -59,11 +59,11 @@ export default function AccoladesPage() {
       </div>
 
       {/* Intro */}
-      <div className="py-20 px-14 md:px-20 lg:px-32 max-w-3xl" style={{ backgroundColor: "var(--color-charcoal)" }}>
-        <p className="text-[0.9rem] leading-[2.2] font-light" style={{ color: "var(--color-cream)", opacity: 0.7 }}>
-          Year after year, prestigious institutions and seasoned critics affirm what our guests already know — that
-          Roti Gembul represents the apex of fine dining in Malta and beyond. We are humbled and honoured by each
-          recognition, and they deepen our resolve to pursue perfection in every detail.
+      <div className="py-20 px-14 md:px-20 lg:px-32 max-w-3xl" style={{ backgroundColor: "#fbb71d" }}>
+        <p className="text-[0.9rem] leading-[2.2] font-light" style={{ color: "var(--color-charcoal)", opacity: 0.85 }}>
+          Dari tahun ke tahun, kepuasan para Gembudies dan apresiasi dari berbagai pihak menjadi bukti komitmen kami.
+          Roti Gembul terus berupaya menghadirkan kelembutan roti gembong terbaik dengan standar higienis tinggi di setiap gerai.
+          Apresiasi ini menjadi motivasi bagi kami untuk terus berinovasi tanpa mengurangi cita rasa tradisional.
         </p>
       </div>
 
@@ -90,16 +90,16 @@ export default function AccoladesPage() {
       </section>
 
       {/* Press */}
-      <section ref={pressRef} className="py-24 px-14 md:px-20 lg:px-32" style={{ backgroundColor: "var(--color-charcoal)" }}>
-        <p className="text-[0.6rem] tracking-[0.45em] uppercase mb-16" style={{ color: "var(--color-gold)" }}>In the Press</p>
+      <section ref={pressRef} className="py-24 px-14 md:px-20 lg:px-32" style={{ backgroundColor: "#fbb71d" }}>
+        <p className="text-[0.6rem] tracking-[0.45em] uppercase mb-16" style={{ color: "var(--color-charcoal)", opacity: 0.9 }}>In the Press</p>
         <div className="grid md:grid-cols-3 gap-10">
           {press.map((p) => (
-            <div key={p.outlet} data-press className="border-t pt-8" style={{ borderColor: "rgba(184,150,90,0.25)" }}>
+            <div key={p.outlet} data-press className="border-t pt-8" style={{ borderColor: "rgba(99,40,22,0.2)" }}>
               <p className="text-[1rem] leading-[1.9] font-light mb-6 italic"
-                style={{ fontFamily: "var(--font-display)", color: "var(--color-cream)", opacity: 0.85 }}>
+                style={{ fontFamily: "var(--font-display)", color: "var(--color-charcoal)", opacity: 0.85 }}>
                 &ldquo;{p.quote}&rdquo;
               </p>
-              <span className="text-[0.6rem] tracking-[0.3em] uppercase" style={{ color: "var(--color-gold)" }}>
+              <span className="text-[0.6rem] tracking-[0.3em] uppercase" style={{ color: "var(--color-charcoal)", opacity: 0.9 }}>
                 — {p.outlet}
               </span>
             </div>

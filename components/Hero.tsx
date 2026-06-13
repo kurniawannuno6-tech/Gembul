@@ -71,10 +71,10 @@ export default function Hero({ loaded }: { loaded: boolean }) {
         {/* Small eyebrow label above the headline */}
         <p
           ref={eyebrowRef}
-          className="text-[0.62rem] tracking-[0.45em] uppercase mb-8"
+          className="text-[0.62rem] font-bold tracking-[0.45em] uppercase mb-8"
           style={{ color: "var(--color-gold)" }}
         >
-          Est. 2018 · Fine Dining · Valletta
+          Est. 2021
         </p>
 
         {/* Headline line 1 — "Hello," */}
@@ -102,10 +102,10 @@ export default function Hero({ loaded }: { loaded: boolean }) {
         {/* Tagline / subtitle */}
         <p
           ref={subRef}
-          className="text-[0.8rem] tracking-[0.1em] leading-[2] max-w-md mx-auto mb-12"
+          className="text-[0.8rem] tracking-[0.1em] font-bold leading-[2] max-w-md mx-auto mb-12"
           style={{ color: "var(--color-cream)" }}
         >
-          An epicurean blend of magnetic charisma, old-world charm, and relaxed elegance awaits you.
+          Pelopor Roti Gembong Kekinian No.1 Di Indonesia
         </p>
 
       </div>

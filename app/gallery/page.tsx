@@ -14,18 +14,17 @@ gsap.registerPlugin(ScrollTrigger);
 // The "large" size items span 2 columns on desktop (use 1600 × 900 px for those)
 // Hero banner: /public/images/gallery-hero.jpg  •  1920 × 1080 px landscape
 // ============================================================================
-const categories = ["All", "Dining Room", "Kitchen", "Dishes", "Events"];
+const categories = ["All", "Outlets", "Kitchen", "Buns", "Events"];
 
 const images = [
-  { src: "/images/gallery-dish-hero.jpg", cat: "Dishes", label: "Signature Dishes", size: "large" },
-  { src: "/images/gallery-dining.jpg", cat: "Dining Room", label: "The Dining Room", size: "normal" },
-  { src: "/images/gallery-kitchen.jpg", cat: "Kitchen", label: "The Kitchen", size: "normal" },
-  { src: "/images/gallery-wine.jpg", cat: "Dining Room", label: "Fine Wines", size: "normal" },
-  { src: "/images/gallery-interior.jpg", cat: "Dining Room", label: "Interior", size: "large" },
-  { src: "/images/gallery-prep.jpg", cat: "Kitchen", label: "Preparation", size: "normal" },
-  { src: "/images/gallery-plating.jpg", cat: "Dishes", label: "Plating", size: "normal" },
-  { src: "/images/gallery-events.jpg", cat: "Events", label: "Private Dining", size: "normal" },
-  { src: "/images/gallery-craft.jpg", cat: "Dishes", label: "Artisan Craft", size: "normal" },
+  { src: "/images/gallery-dish-hero.jpg", cat: "Buns", label: "Signature Buns", size: "large" },
+  { src: "/images/gallery-dining.jpg", cat: "Outlets", label: "Dine-in Corner", size: "normal" },
+  { src: "/images/gallery-kitchen.jpg", cat: "Kitchen", label: "Bakery Kitchen", size: "normal" },
+  { src: "/images/gallery-prep.jpg", cat: "Kitchen", label: "Dough Prep", size: "normal" },
+  { src: "/images/gallery-interior.jpg", cat: "Outlets", label: "Outlet Interior", size: "large" },
+  { src: "/images/gallery-plating.jpg", cat: "Buns", label: "Adding Toppings", size: "normal" },
+  { src: "/images/gallery-events.jpg", cat: "Events", label: "Outlet Launching", size: "normal" },
+  { src: "/images/gallery-craft.jpg", cat: "Buns", label: "Artisan Baking", size: "normal" },
 ];
 
 export default function GalleryPage() {

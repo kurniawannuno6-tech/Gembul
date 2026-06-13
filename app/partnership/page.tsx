@@ -127,30 +127,30 @@ export default function PartnershipPage() {
       </section>
 
       {/* Section 2: Pricing/Tiers */}
-      <section ref={tiersRef} className="py-24 px-6 md:px-16" style={{ backgroundColor: "var(--color-charcoal)", color: "var(--color-cream)" }}>
+      <section ref={tiersRef} className="py-24 px-6 md:px-16" style={{ backgroundColor: "#fbb71d", color: "var(--color-charcoal)" }}>
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
-            <p className="text-[0.6rem] tracking-[0.4em] uppercase mb-4" style={{ color: "var(--color-gold)" }}>Franchise Packages</p>
+            <p className="text-[0.6rem] tracking-[0.4em] uppercase mb-4" style={{ color: "var(--color-charcoal)", opacity: 0.8 }}>Franchise Packages</p>
             <h2 className="text-3xl md:text-4xl font-light" style={{ fontFamily: "var(--font-display)" }}>Investment Tier Packages</h2>
           </div>
           <div className="grid md:grid-cols-2 gap-10">
             {tiers.map((t) => (
-              <div key={t.name} data-card className="p-10 border rounded-xl flex flex-col justify-between" style={{ borderColor: "rgba(184,150,90,0.25)", backgroundColor: "var(--color-dark)" }}>
+              <div key={t.name} data-card className="p-10 border rounded-xl flex flex-col justify-between shadow-sm" style={{ borderColor: "rgba(99,40,22,0.12)", backgroundColor: "#FFFFFF", color: "var(--color-charcoal)" }}>
                 <div>
-                  <span className="block text-[0.58rem] tracking-[0.25em] uppercase mb-2" style={{ color: "var(--color-gold)" }}>{t.space}</span>
+                  <span className="block text-[0.58rem] tracking-[0.25em] uppercase mb-2 font-medium" style={{ color: "var(--color-charcoal)", opacity: 0.6 }}>{t.space}</span>
                   <h3 className="text-2xl font-light mb-4" style={{ fontFamily: "var(--font-display)" }}>{t.name}</h3>
                   <p className="text-[0.8rem] leading-[1.8] opacity-80 mb-6">{t.desc}</p>
                   <ul className="space-y-2 mb-8 text-[0.75rem]">
                     {t.features.map((f, i) => (
                       <li key={i} className="flex items-center gap-2">
-                        <span style={{ color: "var(--color-gold)" }}>✓</span> {f}
+                        <span style={{ color: "var(--color-dark)" }}>✓</span> {f}
                       </li>
                     ))}
                   </ul>
                 </div>
-                <div className="border-t pt-6" style={{ borderColor: "rgba(184,150,90,0.12)" }}>
+                <div className="border-t pt-6" style={{ borderColor: "rgba(99,40,22,0.08)" }}>
                   <p className="text-xs opacity-50 uppercase tracking-wide">Investment Value</p>
-                  <h4 className="text-2xl font-semibold mt-1" style={{ color: "var(--color-gold)" }}>{t.investment}</h4>
+                  <h4 className="text-2xl font-semibold mt-1" style={{ color: "var(--color-dark)" }}>{t.investment}</h4>
                 </div>
               </div>
             ))}
