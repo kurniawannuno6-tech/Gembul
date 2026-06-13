@@ -6,18 +6,46 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center font-bold tracking-[0.15em] uppercase rounded-full transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 select-none",
+  "relative inline-flex items-center justify-center overflow-hidden rounded-full group transition-all duration-300 focus:outline-none disabled:pointer-events-none disabled:opacity-50 select-none",
   {
     variants: {
       variant: {
-        default: "bg-[var(--color-dark)] text-white border border-[var(--color-dark)] hover:bg-transparent hover:text-[var(--color-dark)] transition-all duration-300",
-        gold: "bg-[var(--color-gold)] text-[var(--color-dark)] border border-[var(--color-gold)] hover:bg-transparent hover:text-[var(--color-gold)] transition-all duration-300",
-        outline: "bg-transparent text-[var(--color-dark)] border border-[var(--color-dark)] hover:bg-[var(--color-dark)] hover:text-white transition-all duration-300",
-        secondary: "bg-transparent text-[var(--color-dark)] border border-[rgba(26,22,16,0.22)] hover:bg-[rgba(26,22,16,0.04)] transition-all duration-300",
-        ghost: "bg-transparent text-[var(--color-dark)] hover:bg-[rgba(26,22,16,0.04)] transition-all duration-300",
-        link: "text-[var(--color-dark)] underline-offset-4 hover:underline transition-all duration-300",
-        goldOutline: "bg-transparent border border-[var(--color-gold)] text-[var(--color-gold)] hover:bg-[var(--color-gold)] hover:text-[var(--color-dark)] transition-all duration-300",
-        creamOutline: "bg-transparent border border-[rgba(184,150,90,0.3)] text-[var(--color-cream)] hover:border-[var(--color-gold)] hover:text-[var(--color-gold)] transition-all duration-300",
+        default: "bg-gradient-to-br from-pink-500 to-orange-400 p-0.5 focus:ring-4 focus:ring-pink-200",
+        gold: "bg-gradient-to-br from-pink-500 to-orange-400 p-0.5 focus:ring-4 focus:ring-pink-200",
+        outline: "bg-gradient-to-br from-pink-500 to-orange-400 p-0.5 focus:ring-4 focus:ring-pink-200",
+        secondary: "bg-gradient-to-br from-pink-500 to-orange-400 p-0.5 focus:ring-4 focus:ring-pink-200",
+        ghost: "bg-transparent text-[var(--color-dark)] hover:bg-[rgba(26,22,16,0.04)]",
+        link: "bg-transparent text-[var(--color-dark)]",
+        goldOutline: "bg-gradient-to-br from-pink-500 to-orange-400 p-0.5 focus:ring-4 focus:ring-pink-200",
+        creamOutline: "bg-gradient-to-br from-pink-500 to-orange-400 p-0.5 focus:ring-4 focus:ring-pink-200",
+      },
+      size: {
+        default: "",
+        sm: "",
+        lg: "",
+        icon: "",
+      },
+    },
+    defaultVariants: {
+      variant: "default",
+      size: "default",
+    },
+  }
+);
+
+const innerSpanVariants = cva(
+  "relative transition-all ease-in duration-75 rounded-full inline-flex items-center justify-center font-bold tracking-[0.15em] uppercase select-none",
+  {
+    variants: {
+      variant: {
+        default: "bg-[var(--color-cream)] text-[var(--color-dark)] group-hover:bg-transparent group-hover:text-white",
+        gold: "bg-[var(--color-cream)] text-[var(--color-dark)] group-hover:bg-transparent group-hover:text-white",
+        outline: "bg-[var(--color-cream)] text-[var(--color-dark)] group-hover:bg-transparent group-hover:text-white",
+        secondary: "bg-[var(--color-cream)] text-[var(--color-dark)] group-hover:bg-transparent group-hover:text-white",
+        ghost: "bg-transparent text-[var(--color-dark)]",
+        link: "bg-transparent text-[var(--color-dark)] underline-offset-4 hover:underline",
+        goldOutline: "bg-[var(--color-cream)] text-[var(--color-dark)] group-hover:bg-transparent group-hover:text-white",
+        creamOutline: "bg-[var(--color-dark)] text-[var(--color-cream)] group-hover:bg-transparent group-hover:text-white",
       },
       size: {
         default: "text-[0.72rem] py-4 px-8 md:px-12 leading-none",
@@ -34,14 +62,15 @@ const buttonVariants = cva(
 );
 
 export interface ButtonProps
-  extends Omit<HTMLMotionProps<"button">, "ref">,
+  extends Omit<HTMLMotionProps<"button">, "ref" | "children">,
     VariantProps<typeof buttonVariants> {
+  children?: React.ReactNode;
   hoverScale?: number;
   tapScale?: number;
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, hoverScale = 1.05, tapScale = 0.95, ...props }, ref) => {
+  ({ className, children, variant, size, hoverScale = 1.05, tapScale = 0.95, ...props }, ref) => {
     return (
       <motion.button
         ref={ref}
@@ -50,7 +79,11 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         transition={{ type: "spring", stiffness: 400, damping: 15 }}
         className={cn(buttonVariants({ variant, size }), className)}
         {...props}
-      />
+      >
+        <span className={cn(innerSpanVariants({ variant, size }))}>
+          {children}
+        </span>
+      </motion.button>
     );
   }
 );
